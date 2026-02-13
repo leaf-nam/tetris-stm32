@@ -34,15 +34,9 @@ void MockRenderer::render_hold(const Tetromino& tetromino){}
 
 void MockRenderer::render_score(int score){}
 
-void MockRenderer::render_other_board(Packet& pkt){}
-
 void MockRenderer::render_game_over(){}
 
-void MockRenderer::render_other_game_over(Packet& pkt){}
-
 void MockRenderer::render_win(){}
-
-void MockRenderer::render_other_win(Packet& pkt){}
 
 void MockRenderer::render_level(int level){}
 

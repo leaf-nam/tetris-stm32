@@ -1,7 +1,6 @@
 # STM32 build files
 build/
 Debug/
-STM32CubeIDE/Debug
 *.o
 *.d
 *.elf

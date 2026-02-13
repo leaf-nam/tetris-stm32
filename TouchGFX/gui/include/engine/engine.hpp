@@ -9,7 +9,6 @@
 #include "game_rule/rule_zen.hpp"
 #include "tetromino/tetromino_queue.hpp"
 #include "util/action.hpp"
-#include "util/timer.hpp"
 
 class Engine {
 private:

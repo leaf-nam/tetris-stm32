@@ -3,7 +3,6 @@
 
 #include "board/board.hpp"
 #include "tetromino/tetromino.hpp"
-#include "util/network_packet.hpp"
 #include "i_renderer.hpp"
 
 class MockRenderer: public IRenderer
@@ -21,15 +20,9 @@ public:
 
 	void render_score(int score);
 
-	void render_other_board(Packet& pkt);
-
 	void render_game_over();
 
-	void render_other_game_over(Packet& pkt);
-
 	void render_win();
-
-	void render_other_win(Packet& pkt);
 
 	void render_level(int level);
 

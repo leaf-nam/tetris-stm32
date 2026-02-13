@@ -22,7 +22,7 @@ Engine::Engine(IInputHandler* input_handler, IRenderer* renderer, Board& board, 
     renderer->render_hold(board.get_saved_mino());
     renderer->render_score(score);
     renderer->render_level(rule->get_level());
-    renderer->render_timer(0);
+    renderer->render_timer(ENGINE_TICK_TO_SEC(tick));
 }
 
 /**
