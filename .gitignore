@@ -1,0 +1,20 @@
+# STM32 build files
+build/
+Debug/
+STM32CubeIDE/Debug
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.axf
+*.lst
+*.map
+*.dep
+*.log
+
+# Eclipse/CubeIDE
+.settings/
+.cproject
+.project
+*.launch

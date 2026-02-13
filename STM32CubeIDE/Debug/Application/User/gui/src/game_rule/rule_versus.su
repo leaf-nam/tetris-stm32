@@ -1,9 +1,0 @@
-../Application/User/gui/src/game_rule/rule_versus.cpp:57:6:virtual bool VERSUS::is_game_clear()	0	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:71:5:virtual int VERSUS::get_level()	0	static
-../../TouchGFX/gui/include/game_rule/rule_versus.hpp:8:7:VERSUS::~VERSUS()	0	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:27:5:virtual int VERSUS::update_score()	16	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:59:6:virtual bool VERSUS::is_game_over()	8	static
-../../TouchGFX/gui/include/game_rule/rule_versus.hpp:8:7:virtual VERSUS::~VERSUS()	8	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:5:1:VERSUS::VERSUS(Board&)	16	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:71:37:cpp)	0	static
-../Application/User/gui/src/game_rule/rule_versus.cpp:71:37:cpp)	0	static

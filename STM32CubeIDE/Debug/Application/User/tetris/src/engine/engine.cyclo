@@ -1,9 +1,0 @@
-../Application/User/tetris/src/engine/engine.cpp:17:1:Engine::Engine(IInputHandler*, IRenderer*, Board&, GameRule*, TetrominoQueue&, KeyMapper&)	1
-../Application/User/tetris/src/engine/engine.cpp:32:6:void Engine::handle_tick()	1
-../Application/User/tetris/src/engine/engine.cpp:46:6:void Engine::handle_input(int)	1
-../Application/User/tetris/src/engine/engine.cpp:48:6:void Engine::handle_loop()	7
-../Application/User/tetris/src/engine/engine.cpp:88:6:void Engine::stop()	1
-../Application/User/tetris/src/engine/engine.cpp:90:5:int Engine::finish()	1
-../Application/User/tetris/src/engine/engine.cpp:92:1:Engine::~Engine()	1
-../Application/User/tetris/src/engine/engine.cpp:92:20:cpp)	1
-../Application/User/tetris/src/engine/engine.cpp:92:20:cpp)	1

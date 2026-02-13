@@ -1,3 +1,0 @@
-../Application/User/tetris/src/game_rule/rule_factory.cpp:5:22:std::unique_ptr<GameRule> create_rule(const std::string&, Board&)	16	static
-../Application/User/tetris/src/game_rule/rule_factory.cpp:9:1:cpp)	0	static
-../Application/User/tetris/src/game_rule/rule_factory.cpp:9:1:cpp)	0	static

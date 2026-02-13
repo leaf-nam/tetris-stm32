@@ -1,4 +1,0 @@
-../Application/User/tetris/src/render/box_renderer.cpp:6:1:BoxRenderer::BoxRenderer(IPlatformRenderer*)	0	static
-../Application/User/tetris/src/render/box_renderer.cpp:19:6:void BoxRenderer::draw_rect(Pos, int, int, Color)	48	static
-../Application/User/tetris/src/render/box_renderer.cpp:8:6:void BoxRenderer::draw_box(Pos, int, int, const std::string&, Color, Color)	72	static
-../Application/User/tetris/src/render/box_renderer.cpp:29:6:void BoxRenderer::draw_line(Pos, int, int, Color)	56	static

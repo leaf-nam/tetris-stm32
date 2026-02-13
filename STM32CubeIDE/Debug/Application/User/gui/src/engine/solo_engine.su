@@ -1,7 +1,0 @@
-../Application/User/gui/src/engine/solo_engine.cpp:91:6:virtual void SoloEngine::stop()	0	static
-../Application/User/gui/src/engine/solo_engine.cpp:93:5:virtual int SoloEngine::finish()	0	static
-../Application/User/gui/src/engine/solo_engine.cpp:22:6:virtual void SoloEngine::run(bool)	984	static
-../Application/User/gui/src/engine/solo_engine.cpp:17:1:SoloEngine::SoloEngine(Setting*, IInputHandler*, IRenderer*)	24	static
-../Application/User/gui/src/engine/solo_engine.cpp:95:1:SoloEngine::~SoloEngine()	0	static
-../Application/User/gui/src/engine/solo_engine.cpp:95:28:cpp)	0	static
-../Application/User/gui/src/engine/solo_engine.cpp:95:28:cpp)	0	static

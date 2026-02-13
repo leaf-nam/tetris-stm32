@@ -1,5 +1,0 @@
-../Application/User/gui/src/util/timer.cpp:5:1:Timer::Timer()	16	static
-../Application/User/gui/src/util/timer.cpp:12:8:static Timer& Timer::get_instance()	8	static
-../Application/User/gui/src/util/timer.cpp:18:6:void Timer::set_curr_time()	16	static
-../Application/User/gui/src/util/timer.cpp:20:6:bool Timer::check_500ms_time()	16	static
-../Application/User/gui/src/util/timer.cpp:34:5:int Timer::get_seconds()	8	static
