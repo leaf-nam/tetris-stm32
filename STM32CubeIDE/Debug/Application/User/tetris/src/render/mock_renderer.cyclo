@@ -1,0 +1,9 @@
+../Application/User/tetris/src/render/mock_renderer.cpp:9:6:virtual void MockRenderer::render_background()	1
+../Application/User/tetris/src/render/mock_renderer.cpp:29:6:virtual void MockRenderer::render_next_block(const int*)	1
+../Application/User/tetris/src/render/mock_renderer.cpp:35:6:virtual void MockRenderer::render_score(int)	1
+../../TouchGFX/gui/include/render/mock_renderer.hpp:9:7:MockRenderer::~MockRenderer()	1
+../Application/User/tetris/src/render/mock_renderer.cpp:24:6:virtual void MockRenderer::render_timer(int)	1
+../Application/User/tetris/src/render/mock_renderer.cpp:11:6:virtual void MockRenderer::render_board(const Board&, const Tetromino&)	3
+../../TouchGFX/gui/include/render/mock_renderer.hpp:9:7:virtual MockRenderer::~MockRenderer()	1
+../Application/User/tetris/src/render/mock_renderer.cpp:49:35:cpp)	1
+../Application/User/tetris/src/render/mock_renderer.cpp:49:35:cpp)	1

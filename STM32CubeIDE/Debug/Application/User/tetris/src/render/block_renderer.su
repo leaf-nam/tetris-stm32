@@ -1,0 +1,4 @@
+../Application/User/tetris/src/render/block_renderer.cpp:9:1:BlockRenderer::BlockRenderer(IPlatformRenderer*, ColorPicker)	0	static
+../Application/User/tetris/src/render/block_renderer.cpp:29:6:void BlockRenderer::render_mino_pattern(Pos, const Tetromino&, Color, Color, bool)	96	static
+../Application/User/tetris/src/render/block_renderer.cpp:14:6:void BlockRenderer::render_mino_pattern(Pos, const Tetromino&, bool)	40	static
+../Application/User/tetris/src/render/block_renderer.cpp:22:6:void BlockRenderer::render_mino_pattern(Pos, const Tetromino&, Color, bool)	40	static

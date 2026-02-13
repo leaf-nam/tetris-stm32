@@ -1,0 +1,3 @@
+../Application/User/gui/src/game_rule/rule_factory.cpp:5:22:std::unique_ptr<GameRule> create_rule(const std::string&, Board&)	2
+../Application/User/gui/src/game_rule/rule_factory.cpp:9:1:cpp)	1
+../Application/User/gui/src/game_rule/rule_factory.cpp:9:1:cpp)	1

@@ -1,0 +1,16 @@
+C:\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\arm-none-eabi\include\c++\12.3.1\bits\basic_string.h:1652:7:std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::assign(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	1
+../Application/User/gui/src/render/text_renderer.cpp:5:1:TextRenderer::TextRenderer(IPlatformRenderer*, ColorPicker)	1
+../Application/User/gui/src/render/text_renderer.cpp:10:6:void TextRenderer::print_big_char(Pos, char, Color)	5
+../Application/User/gui/src/render/text_renderer.cpp:27:6:void TextRenderer::print_big_char(Pos, char, Color, Color)	5
+../Application/User/gui/src/render/text_renderer.cpp:44:6:void TextRenderer::print_big_char(Pos, char)	1
+../Application/User/gui/src/render/text_renderer.cpp:49:6:void TextRenderer::print_big_string(Pos, std::string&, Color)	2
+../Application/User/gui/src/render/text_renderer.cpp:58:6:void TextRenderer::print_big_string(Pos, std::string&, Color, Color)	2
+../Application/User/gui/src/render/text_renderer.cpp:67:6:void TextRenderer::print_big_string(Pos, std::string&)	6
+../Application/User/gui/src/render/text_renderer.cpp:89:6:void TextRenderer::print_big_string(Pos, const char*, Color)	1
+../Application/User/gui/src/render/text_renderer.cpp:96:6:void TextRenderer::print_big_string(Pos, const char*)	1
+../Application/User/gui/src/render/text_renderer.cpp:103:6:void TextRenderer::print_small_string(Pos, std::string&, Color)	2
+../Application/User/gui/src/render/text_renderer.cpp:109:6:void TextRenderer::print_small_string(Pos, std::string&)	1
+../Application/User/gui/src/render/text_renderer.cpp:114:6:void TextRenderer::print_small_string(Pos, const char*)	1
+../Application/User/gui/src/render/text_renderer.cpp:121:6:void TextRenderer::draw_game_start_count(Pos, int)	7
+../Application/User/gui/src/render/text_renderer.cpp:127:6:void TextRenderer::draw_game_over(Pos)	1
+../Application/User/gui/src/render/text_renderer.cpp:132:6:void TextRenderer::draw_logo(Pos)	1

@@ -1,0 +1,23 @@
+../Application/User/gui/src/board/board.cpp:9:1:Board::Board()	16	static
+../Application/User/gui/src/board/board.cpp:26:16:std::pair<int, int> Board::get_active_mino_pos()	8	static
+../Application/User/gui/src/board/board.cpp:32:5:int Board::get_active_mino_rotation()	0	static
+../Application/User/gui/src/board/board.cpp:38:5:int Board::get_active_mino_type()	0	static
+../Application/User/gui/src/board/board.cpp:44:12:const bool Board::has_active_mino() const	0	static
+../Application/User/gui/src/board/board.cpp:50:12:const bool Board::has_swaped_mino() const	0	static
+../Application/User/gui/src/board/board.cpp:74:6:bool Board::fill(int, int, int)	8	static
+../Application/User/gui/src/board/board.cpp:122:6:void Board::update_board()	40	static
+../Application/User/gui/src/board/board.cpp:139:12:Tetromino& Board::get_active_mino()	0	static
+../Application/User/gui/src/board/board.cpp:141:12:Tetromino& Board::get_saved_mino()	0	static
+../Application/User/gui/src/board/board.cpp:143:6:bool Board::get_is_mino_swaped()	0	static
+../Application/User/gui/src/board/board.cpp:148:15:const int (& Board::get_board() const)[22][10]	0	static
+../Application/User/gui/src/board/board.cpp:156:12:const bool Board::is_filled(int, int) const	0	static
+../Application/User/gui/src/board/board.cpp:56:6:bool Board::can_move_mino(int, int, int)	32	static
+../Application/User/gui/src/board/board.cpp:89:6:bool Board::move_active_mino(int, int, int, MoveOption)	24	static
+../Application/User/gui/src/board/board.cpp:110:6:bool Board::spawn_mino(int)	16	static
+../Application/User/gui/src/board/board.cpp:168:11:const int Board::at(int, int) const	0	static
+../Application/User/gui/src/board/board.cpp:177:6:void Board::delete_line(int)	16	static
+../Application/User/gui/src/board/board.cpp:187:6:bool Board::insert_line(int)	96	static
+../Application/User/gui/src/board/board.cpp:225:6:bool Board::is_line_full(int)	16	static
+../Application/User/gui/src/board/board.cpp:234:6:void Board::swap_mino()	40	static
+../Application/User/gui/src/board/board.cpp:268:1:cpp)	0	static
+../Application/User/gui/src/board/board.cpp:268:1:cpp)	0	static

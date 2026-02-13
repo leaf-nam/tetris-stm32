@@ -1,0 +1,10 @@
+../Application/User/gui/src/game_rule/rule_blitz.cpp:24:6:virtual bool BLITZ::is_game_clear()	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:40:6:virtual bool BLITZ::time_and_level_update()	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:45:5:virtual int BLITZ::get_level()	1
+../../TouchGFX/gui/include/game_rule/rule_blitz.hpp:7:7:BLITZ::~BLITZ()	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:7:5:virtual int BLITZ::update_score()	3
+../Application/User/gui/src/game_rule/rule_blitz.cpp:30:6:virtual bool BLITZ::is_game_over()	1
+../../TouchGFX/gui/include/game_rule/rule_blitz.hpp:7:7:virtual BLITZ::~BLITZ()	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:5:1:BLITZ::BLITZ(Board&)	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:48:1:cpp)	1
+../Application/User/gui/src/game_rule/rule_blitz.cpp:48:1:cpp)	1

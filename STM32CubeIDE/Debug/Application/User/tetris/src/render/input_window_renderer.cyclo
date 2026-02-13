@@ -1,0 +1,2 @@
+../Application/User/tetris/src/render/input_window_renderer.cpp:5:1:InputWindowRenderer::InputWindowRenderer(IPlatformRenderer*, BoxRenderer)	1
+../Application/User/tetris/src/render/input_window_renderer.cpp:8:6:void InputWindowRenderer::render_input_window(Pos, std::string)	1

@@ -1,0 +1,4 @@
+../Application/User/gui/src/render/box_renderer.cpp:6:1:BoxRenderer::BoxRenderer(IPlatformRenderer*)	1
+../Application/User/gui/src/render/box_renderer.cpp:19:6:void BoxRenderer::draw_rect(Pos, int, int, Color)	3
+../Application/User/gui/src/render/box_renderer.cpp:8:6:void BoxRenderer::draw_box(Pos, int, int, const std::string&, Color, Color)	3
+../Application/User/gui/src/render/box_renderer.cpp:29:6:void BoxRenderer::draw_line(Pos, int, int, Color)	3
