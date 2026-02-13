@@ -17,10 +17,9 @@ void engine_wrapper_init(void)
 	Board board;
 	ZEN rule = ZEN(board);
 	TetrominoQueue& queue = TetrominoQueue::get_instance();
-	Timer& timer = Timer::get_instance();
 	KeyMapper key_mapper;
 
-	Engine engine(&input, &render, board, &rule, &queue, &timer, key_mapper);
+	Engine engine(&input, &render, board, &rule, queue, key_mapper);
 
 	for(;;) {
 		engine.handle_loop();

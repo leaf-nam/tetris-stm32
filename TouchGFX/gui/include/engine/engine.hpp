@@ -16,11 +16,10 @@ private:
 	IInputHandler* input_handler;
 	IRenderer* renderer;
     GameRule* rule;
-    TetrominoQueue* tetromino_queue;
-    Timer* timer;
 
+    TetrominoQueue& tetromino_queue;
     Board& board;
-    KeyMapper key_mapper;
+    KeyMapper& key_mapper;
 
     int curr_mino = 0;
 	int score = 0, new_score;
@@ -28,6 +27,7 @@ private:
 	bool is_level_up = false;
 	int key;
 	int index = 0;
+	int tick = 0;
 
 public:
     /**
@@ -35,7 +35,7 @@ public:
      * @param 플랫폼 종속 인터페이스
      * @return 게임엔진
      */
-	Engine(IInputHandler* input_handler, IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue* tetromino_queue, Timer* timer, KeyMapper key_mapper);
+	Engine(IInputHandler* input_handler, IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue& tetromino_queue, KeyMapper& key_mapper);
 
     /**
      * @brief 루프 실행
