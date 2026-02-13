@@ -2,6 +2,10 @@ extern "C" {
 #include <stdio.h>
 #include "main.h"
 #include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "engine_task.h"
 }
 
 #include "input/mock_input.hpp"
@@ -21,9 +25,14 @@ void engine_wrapper_init(void)
 
 	Engine engine(&input, &render, board, &rule, queue, key_mapper);
 
+	EngineTaskMessage message;
+
 	for(;;) {
+		if (xQueueReceive(engine_task_queue, &message, pdMS_TO_TICKS(20)) == pdPASS) {
+			engine.handle_tick();
+		}
+
 		engine.handle_loop();
-		osDelay(100);
 	}
 
 }

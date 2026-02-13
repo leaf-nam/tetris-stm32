@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
 #include "engine_task.h"
+#include "timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,6 +98,7 @@ const osThreadAttr_t Engine_Task_attributes = {
   .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -232,12 +234,9 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
-
-  //  for(;;)
-  //  {
-  //	  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
-  //	  HAL_Delay(500);
-  //  }
+  engine_task_queue = xQueueCreate( ENGINE_TASK_QUEUE_LENGTH, ENGINE_TASK_QUEUE_SIZE );
+  xTimer = xTimerCreate("500ms Timer", pdMS_TO_TICKS(500), pdTRUE, ( void * ) 0, Timer_500ms_callback );
+  xTimerStart(xTimer, 0);
 
   /* USER CODE END RTOS_EVENTS */
 

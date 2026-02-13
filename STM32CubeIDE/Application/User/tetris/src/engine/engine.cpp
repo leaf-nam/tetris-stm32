@@ -28,7 +28,6 @@ Engine::Engine(IInputHandler* input_handler, IRenderer* renderer, Board& board, 
 /**
  * @brief 타이머 틱 실행
  */
-// TODO 타이머 인터럽트(handle_tick)로 분리
 void Engine::handle_tick(){
 	tick++;
 	rule->process(Action::DROP);
@@ -57,7 +56,7 @@ void Engine::handle_loop()
 	{
 		key = input_handler->scan();
 		action = key_mapper.map_key(key);
-		if (action != -1) {
+		if (action != Action::INVALID) {
 			rule->process(action);
 			renderer->render_next_block(tetromino_queue.get_tetrominos());
 			renderer->render_board(board, board.get_active_mino());
