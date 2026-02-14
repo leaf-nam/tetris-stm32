@@ -722,11 +722,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : JOY_P_Pin */
-  GPIO_InitStruct.Pin = JOY_P_Pin;
+  /*Configure GPIO pins : HARD_DROP_Pin HOLD_Pin JOY_P_Pin */
+  GPIO_InitStruct.Pin = HARD_DROP_Pin|HOLD_Pin|JOY_P_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(JOY_P_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;

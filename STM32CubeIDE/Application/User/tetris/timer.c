@@ -32,19 +32,36 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 	ulCount = ( uint32_t ) pvTimerGetTimerID( xTimer );
 	ulCount++;
 
-	uint32_t adcX, adcY;
-
-	HAL_ADC_Start(&hadc1);
-
-	HAL_ADC_PollForConversion(&hadc1, 100);
-	adcX = HAL_ADC_GetValue(&hadc1);
-
-	HAL_ADC_PollForConversion(&hadc1, 100);
-	adcY = HAL_ADC_GetValue(&hadc1);
-
 	EngineTaskMessage message;
-	message.messageID = ENGINE_TASK_INPUT;
-	message.input = Timer_get_input(adcX, adcY);
+
+	{ // 조이스틱 입력 처리
+		uint32_t adcX, adcY;
+
+		HAL_ADC_Start(&hadc1);
+
+		HAL_ADC_PollForConversion(&hadc1, 100);
+		adcX = HAL_ADC_GetValue(&hadc1);
+
+		HAL_ADC_PollForConversion(&hadc1, 100);
+		adcY = HAL_ADC_GetValue(&hadc1);
+
+
+		message.messageID = ENGINE_TASK_INPUT;
+		message.input = Timer_get_input(adcX, adcY);
+	}
+
+	{ // 버튼 입력 처리   * 조이스틱 입력 무시
+		if (HAL_GPIO_ReadPin(HOLD_GPIO_Port, HOLD_Pin) == GPIO_PIN_RESET)
+			message.input = 'w';
+
+		if (HAL_GPIO_ReadPin(HARD_DROP_GPIO_Port, HARD_DROP_Pin) == GPIO_PIN_RESET)
+			message.input = ' ';
+
+		if (HAL_GPIO_ReadPin(JOY_P_GPIO_Port, JOY_P_Pin) == GPIO_PIN_RESET)
+			message.input = ' ';
+	}
+
+
 	xQueueSendToFront( engine_task_queue, &message, xInput );
 
 	vTimerSetTimerID( xTimer, ( void * ) ulCount );

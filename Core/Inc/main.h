@@ -68,8 +68,14 @@ void Error_Handler(void);
 #define MCU_ACTIVE_GPIO_Port GPIOE
 #define JOY_X_Pin GPIO_PIN_0
 #define JOY_X_GPIO_Port GPIOA
-#define JOY_P_Pin GPIO_PIN_2
-#define JOY_P_GPIO_Port GPIOA
+#define JOY_Y_Pin GPIO_PIN_5
+#define JOY_Y_GPIO_Port GPIOA
+#define HARD_DROP_Pin GPIO_PIN_12
+#define HARD_DROP_GPIO_Port GPIOB
+#define HOLD_Pin GPIO_PIN_13
+#define HOLD_GPIO_Port GPIOB
+#define JOY_P_Pin GPIO_PIN_15
+#define JOY_P_GPIO_Port GPIOB
 #define LD3_Pin GPIO_PIN_13
 #define LD3_GPIO_Port GPIOG
 #define LD4_Pin GPIO_PIN_14
