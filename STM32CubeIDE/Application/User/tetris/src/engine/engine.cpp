@@ -33,7 +33,6 @@ void Engine::handle_tick(){
 /**
  * @brief 입력 인터럽트 실행
  */
-// TODO 키 인터럽트(handle_input)로 분리
 void Engine::handle_input(int key){
 	Action action = key_mapper.map_key(key);
 	if (action != Action::INVALID) {

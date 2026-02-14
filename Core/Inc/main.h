@@ -66,6 +66,10 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define MCU_ACTIVE_Pin GPIO_PIN_5
 #define MCU_ACTIVE_GPIO_Port GPIOE
+#define JOY_X_Pin GPIO_PIN_0
+#define JOY_X_GPIO_Port GPIOA
+#define JOY_P_Pin GPIO_PIN_2
+#define JOY_P_GPIO_Port GPIOA
 #define LD3_Pin GPIO_PIN_13
 #define LD3_GPIO_Port GPIOG
 #define LD4_Pin GPIO_PIN_14

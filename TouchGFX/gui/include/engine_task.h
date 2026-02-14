@@ -9,7 +9,7 @@ extern QueueHandle_t engine_task_queue;
 
 typedef struct EngineTaskMessage_ {
 	char messageID;
-	char input;
+	int input;
 } EngineTaskMessage;
 
 #define ENGINE_TASK_QUEUE_LENGTH 10

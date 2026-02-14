@@ -28,7 +28,13 @@ void engine_wrapper_init(void)
 
 	for(;;) {
 		if (xQueueReceive(engine_task_queue, &message, pdMS_TO_TICKS(20)) == pdPASS) {
-			engine.handle_tick();
+
+			switch(message.messageID) {
+			case ENGINE_TASK_TICK: engine.handle_tick(); break;
+			case ENGINE_TASK_INPUT: engine.handle_input(message.input); break;
+			default: break;
+			}
+
 		}
 
 		engine.handle_loop();
