@@ -1,7 +1,6 @@
 #ifndef __ENGINE_HPP__
 #define __ENGINE_HPP__
 
-#include "i_input_handler.hpp"
 #include "i_renderer.hpp"
 
 #include "board/board.hpp"
@@ -12,21 +11,17 @@
 
 class Engine {
 private:
-	IInputHandler* input_handler;
 	IRenderer* renderer;
     GameRule* rule;
-
     TetrominoQueue& tetromino_queue;
     Board& board;
     KeyMapper& key_mapper;
 
-    int curr_mino = 0;
 	int score = 0, new_score;
-	int action;
 	bool is_level_up = false;
-	int key;
-	int index = 0;
 	int tick = 0;
+
+	void update_all();
 
 public:
     /**
@@ -34,7 +29,7 @@ public:
      * @param 플랫폼 종속 인터페이스
      * @return 게임엔진
      */
-	Engine(IInputHandler* input_handler, IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue& tetromino_queue, KeyMapper& key_mapper);
+	Engine(IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue& tetromino_queue, KeyMapper& key_mapper);
 
     /**
      * @brief 루프 실행

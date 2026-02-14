@@ -16,14 +16,13 @@ extern "C" void engine_wrapper_init();
 
 void engine_wrapper_init(void)
 {
-	MockInput input;
 	MockRenderer render;
 	Board board;
 	ZEN rule = ZEN(board);
 	TetrominoQueue& queue = TetrominoQueue::get_instance();
 	KeyMapper key_mapper;
 
-	Engine engine(&input, &render, board, &rule, queue, key_mapper);
+	Engine engine(&render, board, &rule, queue, key_mapper);
 
 	EngineTaskMessage message;
 
