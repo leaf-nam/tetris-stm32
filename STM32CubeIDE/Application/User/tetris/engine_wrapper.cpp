@@ -8,7 +8,6 @@ extern "C" {
 #include "engine_task.h"
 }
 
-#include "input/mock_input.hpp"
 #include "render/mock_renderer.hpp"
 #include "engine/engine.hpp"
 

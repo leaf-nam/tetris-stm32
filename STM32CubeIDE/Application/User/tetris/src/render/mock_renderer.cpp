@@ -1,7 +1,5 @@
 #include "render/mock_renderer.hpp"
 
-#include "render/theme.hpp"
-
 #include <iostream>
 
 using namespace std;
