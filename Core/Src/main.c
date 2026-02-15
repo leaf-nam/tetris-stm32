@@ -236,7 +236,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  Engine_TaskHandle = osThreadNew(Engine_Task, NULL, &Engine_Task_attributes);
+//  Engine_TaskHandle = osThreadNew(Engine_Task, NULL, &Engine_Task_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */

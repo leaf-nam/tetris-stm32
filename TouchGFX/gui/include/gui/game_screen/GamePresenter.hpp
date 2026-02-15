@@ -25,6 +25,8 @@ public:
      */
     virtual void deactivate();
 
+    Model* getModel() { return model; };
+
     virtual ~GamePresenter() {}
 
 private:
