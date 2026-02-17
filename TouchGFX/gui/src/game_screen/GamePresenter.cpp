@@ -16,3 +16,8 @@ void GamePresenter::deactivate()
 {
 
 }
+
+void GamePresenter::notifyBoardChanged()
+{
+    view.updateBoard();
+}

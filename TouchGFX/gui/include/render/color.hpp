@@ -24,4 +24,9 @@ struct RGB
     uint8_t r, g, b;
 };
 
+class Colors {
+public:
+	static RGB getColor(int);
+};
+
 #endif

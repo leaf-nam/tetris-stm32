@@ -26,6 +26,7 @@
 #include "Components/ili9341/ili9341.h"
 #include "app_touchgfx.h"
 #include "engine_task.h"
+#include "render_task.h"
 #include "timer.h"
 #include <stdio.h>
 /* USER CODE END Includes */
@@ -236,15 +237,16 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-//  Engine_TaskHandle = osThreadNew(Engine_Task, NULL, &Engine_Task_attributes);
+  Engine_TaskHandle = osThreadNew(Engine_Task, NULL, &Engine_Task_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   engine_task_queue = xQueueCreate( ENGINE_TASK_QUEUE_LENGTH, ENGINE_TASK_QUEUE_SIZE );
+  render_task_queue = xQueueCreate( RENDER_TASK_QUEUE_LENGTH, RENDER_TASK_QUEUE_SIZE );
 
-  x500msTimer = xTimerCreate("500ms Timer", x500ms, pdTRUE, ( void * ) 0, Timer_500ms_callback );
-  xInputTimer = xTimerCreate("input Timer", xInput, pdTRUE, ( void * ) 0, Timer_input_callback );
+  x500msTimer = xTimerCreate("500ms Timer", x500msWait, pdTRUE, ( void * ) 0, Timer_500ms_callback );
+  xInputTimer = xTimerCreate("input Timer", xInputWait, pdTRUE, ( void * ) 0, Timer_input_callback );
 
   xTimerStart(x500msTimer, 0);
   xTimerStart(xInputTimer, 0);

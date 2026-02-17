@@ -8,14 +8,14 @@ extern "C" {
 #include "engine_task.h"
 }
 
-#include "render/mock_renderer.hpp"
+#include "render/lcd_renderer.hpp"
 #include "engine/engine.hpp"
 
 extern "C" void engine_wrapper_init();
 
 void engine_wrapper_init(void)
 {
-	MockRenderer render;
+	LcdRenderer render;
 	Board board;
 	ZEN rule = ZEN(board);
 	TetrominoQueue& queue = TetrominoQueue::get_instance();

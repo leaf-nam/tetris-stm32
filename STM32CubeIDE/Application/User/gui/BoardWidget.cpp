@@ -2,6 +2,7 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/Color.hpp>
+#include <render/color.hpp>
 
 void BoardWidget::draw(const touchgfx::Rect& invalidatedArea) const {
 
@@ -10,16 +11,15 @@ void BoardWidget::draw(const touchgfx::Rect& invalidatedArea) const {
     touchgfx::LCD& lcd = touchgfx::HAL::lcd();
     touchgfx::Rect absolute = getAbsoluteRect();
 
-    for (int y = 0; y < BOARD_ROW - 2; y++) {
+    for (int y = 0; y < BOARD_ROW; y++) {
         for (int x = 0; x < BOARD_COL; x++) {
-            auto block = board[y * BOARD_COL + x];
-
 			int drawX = absolute.x + x * BOARD_BLOCK_SIZE;
 			int drawY = absolute.y + y * BOARD_BLOCK_SIZE;
+			RGB rgb = Colors::getColor((*board)[y][x]);
 
 			touchgfx::colortype color =
 				touchgfx::Color::getColorFromRGB(
-					100, x * 10, y * 10);
+					rgb.r, rgb.g, rgb.b);
 
 			lcd.fillRect(touchgfx::Rect(drawX, drawY, BOARD_BLOCK_SIZE, BOARD_BLOCK_SIZE), color);
         }

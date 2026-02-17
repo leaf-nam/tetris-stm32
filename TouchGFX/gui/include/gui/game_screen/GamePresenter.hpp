@@ -27,6 +27,9 @@ public:
 
     Model* getModel() { return model; };
 
+
+    virtual void notifyBoardChanged() override;
+
     virtual ~GamePresenter() {}
 
 private:

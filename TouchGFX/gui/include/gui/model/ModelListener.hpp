@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    virtual void notifyBoardChanged() {}
+
 protected:
     Model* model;
 };

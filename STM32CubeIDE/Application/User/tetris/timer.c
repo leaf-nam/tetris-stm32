@@ -8,8 +8,8 @@ extern ADC_HandleTypeDef hadc1;
 TimerHandle_t x500msTimer;
 TimerHandle_t xInputTimer;
 
-TickType_t x500ms = pdMS_TO_TICKS(100);
-TickType_t xInput = pdMS_TO_TICKS(50);
+TickType_t x500msWait = pdMS_TO_TICKS(500);
+TickType_t xInputWait = pdMS_TO_TICKS(50);
 
 void Timer_500ms_callback( TimerHandle_t xTimer ) {
 
@@ -20,7 +20,7 @@ void Timer_500ms_callback( TimerHandle_t xTimer ) {
 
 	EngineTaskMessage message;
 	message.messageID = ENGINE_TASK_TICK;
-	xQueueSendToFront( engine_task_queue, &message, x500ms );
+	xQueueSendToFront( engine_task_queue, &message, x500msWait );
 
 	vTimerSetTimerID( xTimer, ( void * ) ulCount );
 }
@@ -33,6 +33,7 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 	ulCount++;
 
 	EngineTaskMessage message;
+	message.messageID = ENGINE_TASK_INPUT;
 
 	{ // 조이스틱 입력 처리
 		uint32_t adcX, adcY;
@@ -45,8 +46,6 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 		HAL_ADC_PollForConversion(&hadc1, 100);
 		adcY = HAL_ADC_GetValue(&hadc1);
 
-
-		message.messageID = ENGINE_TASK_INPUT;
 		message.input = Timer_get_input(adcX, adcY);
 	}
 
@@ -62,7 +61,7 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 	}
 
 
-	xQueueSendToFront( engine_task_queue, &message, xInput );
+	xQueueSendToFront( engine_task_queue, &message, xInputWait );
 
 	vTimerSetTimerID( xTimer, ( void * ) ulCount );
 }

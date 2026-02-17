@@ -7,8 +7,8 @@
 
 extern TimerHandle_t x500msTimer;
 extern TimerHandle_t xInputTimer;
-extern TickType_t x500ms;
-extern TickType_t xInput;
+extern TickType_t x500msWait;
+extern TickType_t xInputWait;
 
 void Timer_500ms_callback( TimerHandle_t );
 void Timer_input_callback( TimerHandle_t );
