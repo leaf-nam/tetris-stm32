@@ -21,9 +21,19 @@ void LcdRenderer::render_board(const Board& board, const Tetromino& tetromino)
 
 	msg.messageID = RENDER_TASK_BOARD;
 
-	for (int i = 2; i < 22; ++i) {
-		for (int j = 0; j < 10; ++j) {
-			msg.board[i - 2][j] = board.at(i, j);
+	for (int i = BOARD_UPPER; i < BOARD_ROW + BOARD_UPPER; ++i) {
+		for (int j = 0; j < BOARD_COL; ++j) {
+			msg.board[i - BOARD_UPPER][j] = board.at(i, j);
+		}
+	}
+
+	msg.mino.type = tetromino.get_mino_type();
+	msg.mino.pos[0] = tetromino.get_pos().first - 2;
+	msg.mino.pos[1] = tetromino.get_pos().second;
+	auto mino = tetromino.get_shape();
+	for (int i = 0; i < MINO_SIZE; ++i) {
+		for (int j = 0; j < MINO_SIZE; ++j) {
+			msg.mino.shape[i][j] = mino[i][j];
 		}
 	}
 

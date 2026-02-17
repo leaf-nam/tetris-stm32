@@ -2,7 +2,7 @@
 #define APPLICATION_USER_GUI_BOARDWIDGET_HPP_
 
 #include <touchgfx/widgets/Widget.hpp>
-#include <board/board.hpp>
+#include <render_task.h>
 
 #define BOARD_BLOCK_SIZE 15
 
@@ -13,9 +13,9 @@ public:
     virtual void draw(const touchgfx::Rect& invalidatedArea) const override;
     virtual touchgfx::Rect getSolidRect() const;
 
-    void setBoard(BoardT* board) { this->board = board; }
+    void setBoard(Render_Board* board) { this->board = board; }
 private:
-    const BoardT* board;
+    const Render_Board* board;
 };
 
 #endif /* APPLICATION_USER_GUI_BOARDWIDGET_HPP_ */

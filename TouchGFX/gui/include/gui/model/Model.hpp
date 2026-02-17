@@ -2,14 +2,13 @@
 #define MODEL_HPP
 
 #include <render_task.h>
-#include <board/board.hpp>
 
 class ModelListener;
 
 class Model
 {
 public:
-	BoardT board;
+	Render_Board board;
 
     Model();
 

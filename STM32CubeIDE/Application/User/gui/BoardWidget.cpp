@@ -11,8 +11,8 @@ void BoardWidget::draw(const touchgfx::Rect& invalidatedArea) const {
     touchgfx::LCD& lcd = touchgfx::HAL::lcd();
     touchgfx::Rect absolute = getAbsoluteRect();
 
-    for (int y = 0; y < BOARD_ROW; y++) {
-        for (int x = 0; x < BOARD_COL; x++) {
+    for (int y = 0; y < RENDER_TASK_BOARD_ROW; y++) {
+        for (int x = 0; x < RENDER_TASK_BOARD_COL; x++) {
 			int drawX = absolute.x + x * BOARD_BLOCK_SIZE;
 			int drawY = absolute.y + y * BOARD_BLOCK_SIZE;
 			RGB rgb = Colors::getColor((*board)[y][x]);

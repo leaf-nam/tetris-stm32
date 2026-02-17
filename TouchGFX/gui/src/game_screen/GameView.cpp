@@ -14,8 +14,8 @@ void GameView::setupScreen()
 
     Model* model = presenter->getModel();
     boardWidget.setXY(10, 10);
-    boardWidget.setWidth(BOARD_COL * BOARD_BLOCK_SIZE);
-    boardWidget.setHeight(BOARD_ROW * BOARD_BLOCK_SIZE);
+    boardWidget.setWidth(RENDER_TASK_BOARD_COL * BOARD_BLOCK_SIZE);
+    boardWidget.setHeight(RENDER_TASK_BOARD_ROW * BOARD_BLOCK_SIZE);
     boardWidget.setBoard(&model->board);
     boardWidget.setVisible(true);
 
