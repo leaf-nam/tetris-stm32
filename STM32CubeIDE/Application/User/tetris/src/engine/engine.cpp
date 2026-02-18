@@ -26,7 +26,8 @@ Engine::Engine(IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue
 void Engine::handle_tick(){
 	tick++;
 	rule->process(Action::DROP);
-	update_all();
+	renderer->render_board(board, board.get_active_mino());
+	renderer->render_timer(ENGINE_TICK_TO_SEC(tick));
 	is_level_up = rule->time_and_level_update();
 }
 

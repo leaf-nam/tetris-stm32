@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/game_screen/GamePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class GameViewBase : public touchgfx::View<GamePresenter>
 {
@@ -26,6 +27,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
+    touchgfx::Box box2;
+    touchgfx::Box box2_2;
+    touchgfx::Box box2_1;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_1_1;
 
 private:
 

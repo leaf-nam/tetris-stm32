@@ -4,6 +4,8 @@
 #include <gui_generated/game_screen/GameViewBase.hpp>
 #include <gui/game_screen/GamePresenter.hpp>
 #include <gui/util/BoardWidget.hpp>
+#include <gui/util/HoldWidget.hpp>
+#include <gui/util/NextWidget.hpp>
 #include <render/color.hpp>
 #include <render/pos.hpp>
 
@@ -16,10 +18,16 @@ public:
     GameView();
     virtual ~GameView() {}
     virtual void updateBoard();
+    virtual void updateHold();
+    virtual void updateNext();
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:
 private:
+    BoardWidget boardWidget;
+    HoldWidget holdWidget;
+    NextWidget nextWidget;
 };
 
 #endif // GAMEVIEW_HPP
+

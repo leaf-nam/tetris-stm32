@@ -21,3 +21,13 @@ void GamePresenter::notifyBoardChanged()
 {
     view.updateBoard();
 }
+
+void GamePresenter::notifyHoldChanged()
+{
+	view.updateHold();
+}
+
+void GamePresenter::notifyNextChanged()
+{
+	view.updateNext();
+}

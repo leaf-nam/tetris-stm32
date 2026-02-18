@@ -12,7 +12,7 @@ extern QueueHandle_t render_task_queue;
 #define RENDER_TASK_MINO_SIZE 4
 #define RENDER_TASK_MINO_ROT 4
 #define RENDER_TASK_MINO_KIND 7
-#define RENDER_TASK_NEXT_BLOCKS 3
+#define RENDER_TASK_NEXT_BLOCK_SIZE 3
 
 typedef char Render_Board[RENDER_TASK_BOARD_ROW][RENDER_TASK_BOARD_COL];
 
@@ -27,7 +27,7 @@ typedef struct RenderTaskMessage_ {
 	Render_Board board;
 	Render_Mino mino;
 	int holdType;
-	int nextType[RENDER_TASK_NEXT_BLOCKS];
+	int nextType[RENDER_TASK_NEXT_BLOCK_SIZE];
 	int score;
 	int level;
 

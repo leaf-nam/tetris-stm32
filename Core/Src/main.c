@@ -67,6 +67,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
 
 CRC_HandleTypeDef hcrc;
 
@@ -100,15 +101,18 @@ const osThreadAttr_t GUI_Task_attributes = {
 osThreadId_t Engine_TaskHandle;
 const osThreadAttr_t Engine_Task_attributes = {
   .name = "Engine_Task",
-  .stack_size = 1024 * 4,
+  .stack_size = 1024 * 8,
   .priority = (osPriority_t) osPriorityNormal,
 };
+
+uint16_t adc_values[2];
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_CRC_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_SPI5_Init(void);
@@ -195,6 +199,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CRC_Init();
   MX_I2C3_Init();
   MX_SPI5_Init();
@@ -247,6 +252,7 @@ int main(void)
 
   x500msTimer = xTimerCreate("500ms Timer", x500msWait, pdTRUE, ( void * ) 0, Timer_500ms_callback );
   xInputTimer = xTimerCreate("input Timer", xInputWait, pdTRUE, ( void * ) 0, Timer_input_callback );
+  HAL_ADC_Start_DMA(&hadc1, adc_values, 2);
 
   xTimerStart(x500msTimer, 0);
   xTimerStart(xInputTimer, 0);
@@ -343,8 +349,8 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 2;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
@@ -354,7 +360,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_84CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -364,7 +370,6 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 2;
-  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -623,6 +628,22 @@ static void MX_USART1_UART_Init(void)
   /* USER CODE BEGIN USART1_Init 2 */
 
   /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 
 }
 

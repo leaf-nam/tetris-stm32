@@ -3,13 +3,13 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-extern ADC_HandleTypeDef hadc1;
+extern uint16_t adc_values[2];
 
 TimerHandle_t x500msTimer;
 TimerHandle_t xInputTimer;
 
 TickType_t x500msWait = pdMS_TO_TICKS(500);
-TickType_t xInputWait = pdMS_TO_TICKS(50);
+TickType_t xInputWait = pdMS_TO_TICKS(150);
 
 void Timer_500ms_callback( TimerHandle_t xTimer ) {
 
@@ -35,19 +35,8 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 	EngineTaskMessage message;
 	message.messageID = ENGINE_TASK_INPUT;
 
-	{ // 조이스틱 입력 처리
-		uint32_t adcX, adcY;
-
-		HAL_ADC_Start(&hadc1);
-
-		HAL_ADC_PollForConversion(&hadc1, 100);
-		adcX = HAL_ADC_GetValue(&hadc1);
-
-		HAL_ADC_PollForConversion(&hadc1, 100);
-		adcY = HAL_ADC_GetValue(&hadc1);
-
-		message.input = Timer_get_input(adcX, adcY);
-	}
+	// 조이스틱 입력 처리
+	message.input = Timer_get_input(adc_values[0], adc_values[1]);
 
 	{ // 버튼 입력 처리   * 조이스틱 입력 무시
 		if (HAL_GPIO_ReadPin(HOLD_GPIO_Port, HOLD_Pin) == GPIO_PIN_RESET)

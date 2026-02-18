@@ -3,6 +3,7 @@
 /*********************************************************************************/
 #include <gui_generated/game_screen/GameViewBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 GameViewBase::GameViewBase()
 {
@@ -10,9 +11,39 @@ GameViewBase::GameViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    box1.setPosition(95, 20, 50, 50);
-    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    box1.setPosition(10, 10, 150, 300);
+    box1.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
     add(box1);
+
+    box2.setPosition(170, 60, 60, 60);
+    box2.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    add(box2);
+
+    box2_2.setPosition(170, 10, 60, 40);
+    box2_2.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    add(box2_2);
+
+    box2_1.setPosition(170, 130, 60, 180);
+    box2_1.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    add(box2_1);
+
+    textArea1.setXY(188, 10);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LN3J));
+    add(textArea1);
+
+    textArea1_1.setXY(189, 60);
+    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1.setLinespacing(0);
+    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YLPM));
+    add(textArea1_1);
+
+    textArea1_1_1.setXY(189, 130);
+    textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1_1.setLinespacing(0);
+    textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2TM9));
+    add(textArea1_1_1);
 }
 
 GameViewBase::~GameViewBase()

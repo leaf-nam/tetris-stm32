@@ -208,32 +208,32 @@
     <Filter Include="Source Files\generated\gui_generated\game_screen">
       <UniqueIdentifier>FA602393-E6D9-3909-9D28-A983C928F5F5</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\util">
+      <UniqueIdentifier>D5641252-3314-361A-22AC-ED79F17BB3DC</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\gui\include">
-      <UniqueIdentifier>E409A6E2-856D-E0A0-BD8C-4358B633C721</UniqueIdentifier>
+      <UniqueIdentifier>503DA50C-A3F8-FD9D-3A49-9B479634158C</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\include\setting">
-      <UniqueIdentifier>D8899C6A-C9BC-0328-829C-32CAC3456C74</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\util">
-      <UniqueIdentifier>5186A6D3-387F-B7E8-3E03-3DCBEFFE0954</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\game_rule">
-      <UniqueIdentifier>749F1BB9-050C-401A-4000-A50FF01BCDAD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\engine">
-      <UniqueIdentifier>89714549-2754-A826-3973-B9A0E2EA12D1</UniqueIdentifier>
+    <Filter Include="Source Files\gui\include">
+      <UniqueIdentifier>F38D686B-7DD6-8A42-63AA-FBD811E80EE8</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\render">
-      <UniqueIdentifier>8D0D9F39-82D6-0AD0-4E3D-8C926629D32D</UniqueIdentifier>
+      <UniqueIdentifier>3018729F-A680-5823-4E33-8A3B62B8CA43</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\include\lobby">
-      <UniqueIdentifier>CB844C98-DC96-8BF3-F362-D11CD01FE2A9</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\tetromino">
-      <UniqueIdentifier>E1CEADBA-C48A-BBE6-28A6-F734CA053A7B</UniqueIdentifier>
+    <Filter Include="Header Files\gui\include\game_rule">
+      <UniqueIdentifier>5174D52A-563C-E854-8B4D-26B71414577A</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\board">
-      <UniqueIdentifier>42144820-159A-42C5-8723-41992F9FEDB2</UniqueIdentifier>
+      <UniqueIdentifier>F62AE3E1-D8AB-7AF7-A1F0-81474618331C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\util">
+      <UniqueIdentifier>AF41457C-C5E8-BC70-777F-D62387CEDF0F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\engine">
+      <UniqueIdentifier>69C7FBF3-D1D6-2DBA-81FB-45099C19F406</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\tetromino">
+      <UniqueIdentifier>17CB4DEA-1C81-1657-6C3F-D8D0B5DFF855</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -742,19 +742,10 @@
     <ClInclude Include="..\..\gui\include\game_rule\action_resolver.hpp">
       <Filter>Header Files\gui\include\game_rule</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\block_renderer.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\board\board.hpp">
       <Filter>Header Files\gui\include\board</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\box_renderer.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\render\color.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\color_picker.hpp">
       <Filter>Header Files\gui\include\render</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\engine\engine.hpp">
@@ -763,50 +754,14 @@
     <ClInclude Include="..\..\gui\include\i_input_handler.hpp">
       <Filter>Header Files\gui\include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_lobby_input_handler.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_lobby_network.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_lobby_renderer.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_network.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\i_platform_renderer.hpp">
       <Filter>Header Files\gui\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\i_renderer.hpp">
       <Filter>Header Files\gui\include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_setting_input_handler.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\i_setting_renderer.hpp">
-      <Filter>Header Files\gui\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\input_window_renderer.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\util\json.hpp">
-      <Filter>Header Files\gui\include\util</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\game_rule\key_mapper.hpp">
       <Filter>Header Files\gui\include\game_rule</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\lobby\lobby.hpp">
-      <Filter>Header Files\gui\include\lobby</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\lobby\lobby_network_packet.hpp">
-      <Filter>Header Files\gui\include\lobby</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\engine\multi_engine.hpp">
-      <Filter>Header Files\gui\include\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\util\network_packet.hpp">
-      <Filter>Header Files\gui\include\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\render\pos.hpp">
       <Filter>Header Files\gui\include\render</Filter>
@@ -832,35 +787,11 @@
     <ClInclude Include="..\..\gui\include\game_rule\rule_zen.hpp">
       <Filter>Header Files\gui\include\game_rule</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\setting\setting.hpp">
-      <Filter>Header Files\gui\include\setting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\setting\setting_manager.hpp">
-      <Filter>Header Files\gui\include\setting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\setting\setting_storage.hpp">
-      <Filter>Header Files\gui\include\setting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\setting\setting_title.hpp">
-      <Filter>Header Files\gui\include\setting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\engine\solo_engine.hpp">
-      <Filter>Header Files\gui\include\engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\tetromino\tetromino.hpp">
       <Filter>Header Files\gui\include\tetromino</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\tetromino\tetromino_queue.hpp">
       <Filter>Header Files\gui\include\tetromino</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\text_renderer.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\render\theme.hpp">
-      <Filter>Header Files\gui\include\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\util\timer.hpp">
-      <Filter>Header Files\gui\include\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\game_screen\GamePresenter.hpp">
       <Filter>Header Files\gui\game_screen</Filter>
@@ -891,6 +822,24 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\render\mock_renderer.hpp">
       <Filter>Header Files\gui\include\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\util\BoardWidget.hpp">
+      <Filter>Header Files\gui\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\engine_task.h">
+      <Filter>Source Files\gui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\render\lcd_renderer.hpp">
+      <Filter>Header Files\gui\include\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\render_task.h">
+      <Filter>Source Files\gui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\render\shadow_maker.hpp">
+      <Filter>Header Files\gui\include\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\timer.h">
+      <Filter>Source Files\gui\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

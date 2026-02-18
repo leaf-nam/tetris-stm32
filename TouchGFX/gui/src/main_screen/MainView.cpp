@@ -13,4 +13,6 @@ void MainView::setupScreen()
 void MainView::tearDownScreen()
 {
     MainViewBase::tearDownScreen();
+    remove(StartBtn);
+    remove(SettingBtn);
 }

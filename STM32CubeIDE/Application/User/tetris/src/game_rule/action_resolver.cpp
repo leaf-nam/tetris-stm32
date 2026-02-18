@@ -60,17 +60,16 @@ Pose ActionResolver::resolve_move(int curr_r, int curr_c, int curr_rot, int inpu
     }
 }
 
-vector<Pose> ActionResolver::resolve_rotation(int curr_r, int curr_c, int curr_rot, int mino_type,
+array<Pose, KICK_TEST> ActionResolver::resolve_rotation(int curr_r, int curr_c, int curr_rot, int mino_type,
                                               int input, bool enable_kick)
 {
     int rot_dir = (input == Action::ROTATE_CW ? 0 : 1);
     int new_rot = rotate(curr_rot, input);
 
     const pair<int, int>* kick_table;
-    vector<Pose> poses;
+    array<Pose, KICK_TEST> poses;
 
-    poses.reserve(KICK_TEST);
-
+    int index = 0;
     switch (mino_type) {
     case MinoType::I:
     case MinoType::J:
@@ -82,13 +81,13 @@ vector<Pose> ActionResolver::resolve_rotation(int curr_r, int curr_c, int curr_r
             kick_table = get_kick_table(mino_type, curr_rot, rot_dir);
             for (int i = 0; i < KICK_TEST; ++i) {
                 auto [dr, dc] = kick_table[i];
-                poses.emplace_back(curr_r + dr, curr_c + dc, new_rot);
+                poses[index++] = Pose(curr_r + dr, curr_c + dc, new_rot);
             }
         }
         break;
     }
     default: {
-        poses.emplace_back(curr_r, curr_c, curr_rot);
+    	poses[index++] = Pose(curr_r, curr_c, curr_rot);
         break;
     }
     }

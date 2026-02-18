@@ -60,15 +60,102 @@
           {
             "Type": "Box",
             "Name": "box1",
-            "X": 95,
-            "Y": 20,
-            "Width": 50,
-            "Height": 50,
+            "X": 10,
+            "Y": 10,
+            "Width": 150,
+            "Height": 300,
+            "Color": {
+              "Red": 30,
+              "Green": 32,
+              "Blue": 45
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 170,
+            "Y": 60,
+            "Width": 60,
+            "Height": 60,
+            "Color": {
+              "Red": 30,
+              "Green": 32,
+              "Blue": 45
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2_2",
+            "X": 170,
+            "Y": 10,
+            "Width": 60,
+            "Height": 40,
+            "Color": {
+              "Red": 30,
+              "Green": 32,
+              "Blue": 45
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2_1",
+            "X": 170,
+            "Y": 130,
+            "Width": 60,
+            "Height": 180,
+            "Color": {
+              "Red": 30,
+              "Green": 32,
+              "Blue": 45
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 188,
+            "Y": 10,
+            "Width": 25,
+            "Height": 10,
+            "TextId": "__SingleUse_LN3J",
+            "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 189,
+            "Y": 60,
+            "Width": 23,
+            "Height": 10,
+            "TextId": "__SingleUse_YLPM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 189,
+            "Y": 130,
+            "Width": 23,
+            "Height": 10,
+            "TextId": "__SingleUse_2TM9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []

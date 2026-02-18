@@ -14,6 +14,8 @@ void Model::tick()
     {
         switch(msg.messageID) {
         case RENDER_TASK_BOARD: updateBoard(msg); break;
+        case RENDER_TASK_HOLD: updateHold(msg); break;
+        case RENDER_TASK_NEXT_BLOCK: updateNext(msg); break;
         default: break;
         }
     }
@@ -39,4 +41,22 @@ void Model::updateBoard(RenderTaskMessage& msg) {
     if (modelListener != nullptr) {
         modelListener->notifyBoardChanged();
     }
+}
+
+void Model::updateHold(RenderTaskMessage& msg) {
+	hold = msg.holdType;
+
+	if (modelListener != nullptr) {
+		modelListener->notifyHoldChanged();
+	}
+}
+
+void Model::updateNext(RenderTaskMessage& msg) {
+    for (int i = 0; i < RENDER_TASK_NEXT_BLOCK_SIZE; ++i) {
+        next[i] = msg.nextType[i];
+    }
+
+	if (modelListener != nullptr) {
+		modelListener->notifyNextChanged();
+	}
 }

@@ -1,7 +1,7 @@
 #ifndef __ACTION_RESOLVER_HPP__
 #define __ACTION_RESOLVER_HPP__
 
-#include <vector>
+#include <array>
 #include <tuple>
 #include "util/action.hpp"
 
@@ -19,7 +19,7 @@ private:
     int rotate(int curr_rot, int a);
 public:
     Pose resolve_move(int curr_r, int curr_c, int curr_rot, int a);
-    std::vector<Pose> resolve_rotation(int curr_r, int curr_c, int curr_rot, int mino_type, int a, bool enable_kick);
+    std::array<Pose, KICK_TEST> resolve_rotation(int curr_r, int curr_c, int curr_rot, int mino_type, int a, bool enable_kick);
 };
 
 #endif

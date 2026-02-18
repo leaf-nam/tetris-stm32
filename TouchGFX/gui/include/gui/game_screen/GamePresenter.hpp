@@ -30,6 +30,10 @@ public:
 
     virtual void notifyBoardChanged() override;
 
+    virtual void notifyHoldChanged() override;
+
+    virtual void notifyNextChanged() override;
+
     virtual ~GamePresenter() {}
 
 private:

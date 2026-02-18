@@ -14,7 +14,7 @@ void GameRule::process(int user_input)
     int curr_rot = board.get_active_mino_rotation();
     int mino_type = board.get_active_mino_type();
 
-    vector<Pose> poses;
+    array<Pose, KICK_TEST> poses;
     size_t size;
 
     switch (user_input) {

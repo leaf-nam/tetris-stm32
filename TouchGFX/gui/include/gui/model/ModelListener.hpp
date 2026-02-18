@@ -17,6 +17,10 @@ public:
 
     virtual void notifyBoardChanged() {}
 
+    virtual void notifyHoldChanged() {}
+
+    virtual void notifyNextChanged() {}
+
 protected:
     Model* model;
 };

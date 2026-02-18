@@ -47,9 +47,28 @@ void LcdRenderer::render_timer(int sec)
 
 void LcdRenderer::render_next_block(const int* tetrominoArray)
 {
+	printf("render next called\n");
+
+	RenderTaskMessage msg;
+
+	msg.messageID = RENDER_TASK_NEXT_BLOCK;
+	for (int i = 0; i < 3; ++i) {
+		msg.nextType[i] = tetrominoArray[i];
+	}
+
+	xQueueSendToFront(render_task_queue, &msg, pdMS_TO_TICKS(20));
 }
 
-void LcdRenderer::render_hold(const Tetromino& tetromino){}
+void LcdRenderer::render_hold(const Tetromino& tetromino){
+	printf("render hold called\n");
+
+	RenderTaskMessage msg;
+
+	msg.messageID = RENDER_TASK_HOLD;
+	msg.holdType = tetromino.get_mino_type();
+
+	xQueueSendToFront(render_task_queue, &msg, pdMS_TO_TICKS(20));
+}
 
 void LcdRenderer::render_score(int score){}
 

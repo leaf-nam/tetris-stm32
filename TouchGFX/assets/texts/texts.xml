@@ -5,7 +5,17 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_2TM9" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Next</Translation>
+      </Text>
+      <Text Id="__SingleUse_YLPM" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Hold</Translation>
+      </Text>
+      <Text Id="__SingleUse_LN3J" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Time</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
