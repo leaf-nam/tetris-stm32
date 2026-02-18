@@ -28,6 +28,7 @@ void Engine::handle_tick(){
 	rule->process(Action::DROP);
 	renderer->render_board(board, board.get_active_mino());
 	renderer->render_timer(ENGINE_TICK_TO_SEC(tick));
+	renderer->render_next_block(tetromino_queue.get_tetrominos());
 	is_level_up = rule->time_and_level_update();
 }
 

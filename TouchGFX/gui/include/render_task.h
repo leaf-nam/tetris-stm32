@@ -18,7 +18,7 @@ typedef char Render_Board[RENDER_TASK_BOARD_ROW][RENDER_TASK_BOARD_COL];
 
 typedef struct Mino_ {
 	char type;
-	char pos[2];
+	int pos[2];
 	char shape[RENDER_TASK_MINO_SIZE][RENDER_TASK_MINO_SIZE];
 } Render_Mino;
 

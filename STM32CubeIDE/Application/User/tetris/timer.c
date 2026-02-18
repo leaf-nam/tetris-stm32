@@ -9,7 +9,8 @@ TimerHandle_t x500msTimer;
 TimerHandle_t xInputTimer;
 
 TickType_t x500msWait = pdMS_TO_TICKS(500);
-TickType_t xInputWait = pdMS_TO_TICKS(150);
+TickType_t xInputWait = pdMS_TO_TICKS(30);
+TickType_t xInputHold = pdMS_TO_TICKS(250);
 
 void Timer_500ms_callback( TimerHandle_t xTimer ) {
 
@@ -25,6 +26,8 @@ void Timer_500ms_callback( TimerHandle_t xTimer ) {
 	vTimerSetTimerID( xTimer, ( void * ) ulCount );
 }
 
+static int holdKey = -1;
+static TickType_t pressTime = 0;
 void Timer_input_callback( TimerHandle_t xTimer ) {
 
 	uint32_t ulCount;
@@ -49,8 +52,26 @@ void Timer_input_callback( TimerHandle_t xTimer ) {
 			message.input = ' ';
 	}
 
+	if (message.input != -1)
+	{
+		// 입력한 키 변경되었을때 즉시 전송
+	    if (holdKey != message.input)
+	    {
+	        holdKey = message.input;
+	        pressTime = xTaskGetTickCount();
+	        xQueueSendToFront( engine_task_queue, &message, xInputWait );
+	    }
 
-	xQueueSendToFront( engine_task_queue, &message, xInputWait );
+	    // 변경되지 않았을 경우 대기(xInputHold) 후 전송
+	    else
+	    {
+	        TickType_t now = xTaskGetTickCount();
+
+	        if (now - pressTime > xInputHold)
+	        	xQueueSendToFront( engine_task_queue, &message, xInputWait );
+	    }
+	}
+	else holdKey = -1;
 
 	vTimerSetTimerID( xTimer, ( void * ) ulCount );
 }
