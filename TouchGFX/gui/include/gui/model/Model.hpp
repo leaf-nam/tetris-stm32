@@ -28,6 +28,7 @@ private:
     void updateBoard(RenderTaskMessage& msg);
     void updateHold(RenderTaskMessage& msg);
     void updateNext(RenderTaskMessage& msg);
+    void updateTimer(RenderTaskMessage& msg);
 };
 
 #endif // MODEL_HPP

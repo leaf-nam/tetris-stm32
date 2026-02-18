@@ -34,6 +34,8 @@ public:
 
     virtual void notifyNextChanged() override;
 
+    virtual void notifyTimerChanged(int) override;
+
     virtual ~GamePresenter() {}
 
 private:

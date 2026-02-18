@@ -9,6 +9,7 @@
 #include <gui/game_screen/GamePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class GameViewBase : public touchgfx::View<GamePresenter>
 {
@@ -33,6 +34,13 @@ protected:
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea1_1;
     touchgfx::TextArea textArea1_1_1;
+    touchgfx::TextAreaWithOneWildcard textArea2;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
 
 private:
 

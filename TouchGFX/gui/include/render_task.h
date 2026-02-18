@@ -28,8 +28,7 @@ typedef struct RenderTaskMessage_ {
 	Render_Mino mino;
 	int holdType;
 	int nextType[RENDER_TASK_NEXT_BLOCK_SIZE];
-	int score;
-	int level;
+	int sec;
 
 } RenderTaskMessage;
 
@@ -41,7 +40,5 @@ typedef struct RenderTaskMessage_ {
 #define RENDER_TASK_TIMER 3
 #define RENDER_TASK_HOLD 4
 #define RENDER_TASK_NEXT_BLOCK 5
-#define RENDER_TASK_SCORE 6
-#define RENDER_TASK_LEVEL 7
 
 #endif //__RENDER_TASK_H__

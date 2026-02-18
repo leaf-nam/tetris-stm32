@@ -44,6 +44,15 @@ GameViewBase::GameViewBase()
     textArea1_1_1.setLinespacing(0);
     textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2TM9));
     add(textArea1_1_1);
+
+    textArea2.setXY(186, 25);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea2.setLinespacing(0);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YTB1).getText());
+    textArea2.setWildcard(textArea2Buffer);
+    textArea2.resizeToCurrentText();
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5NRL));
+    add(textArea2);
 }
 
 GameViewBase::~GameViewBase()

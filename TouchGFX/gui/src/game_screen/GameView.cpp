@@ -10,12 +10,6 @@ void GameView::setupScreen()
 {
     GameViewBase::setupScreen();
 
-    touchgfx::LCD& lcd = touchgfx::HAL::lcd();
-    lcd.fillRect(
-        touchgfx::Rect(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT),
-        touchgfx::Color::getColorFromRGB(0, 0, 0)
-    );
-
     Model* model = presenter->getModel();
 
     boardWidget.setXY(10, 10);
@@ -24,33 +18,31 @@ void GameView::setupScreen()
     boardWidget.setBoard(&model->board);
     boardWidget.setVisible(true);
 
-    holdWidget.setXY(170, 60);
+    holdWidget.setXY(170, 75);
     holdWidget.setWidth(60);
-    holdWidget.setHeight(60);
+    holdWidget.setHeight(45);
     holdWidget.setHold(&model->hold);
     holdWidget.setVisible(true);
 
-    nextWidget.setXY(170, 130);
+    nextWidget.setXY(170, 145);
     nextWidget.setWidth(60);
-    nextWidget.setHeight(180);
+    nextWidget.setHeight(165);
     nextWidget.setNext(model->next);
     nextWidget.setVisible(true);
 
-	add(boardWidget);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%02d:%02d", 0, 0);
+
 	add(holdWidget);
 	add(nextWidget);
-
-    boardWidget.invalidate();
-    holdWidget.invalidate();
-    nextWidget.invalidate();
+	add(boardWidget);
 }
 
 void GameView::tearDownScreen()
 {
     GameViewBase::tearDownScreen();
-    remove(boardWidget);
     remove(holdWidget);
     remove(nextWidget);
+    remove(boardWidget);
 }
 
 void GameView::updateBoard()
@@ -64,4 +56,13 @@ void GameView::updateHold() {
 
 void GameView::updateNext() {
 	nextWidget.invalidate();
+}
+
+void GameView::updateTimer(int sec) {
+    int m = sec / 60;
+    int s = sec % 60;
+
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%02d:%02d", m, s);
+    textArea2.resizeToCurrentText();
+    textArea2.invalidate();
 }

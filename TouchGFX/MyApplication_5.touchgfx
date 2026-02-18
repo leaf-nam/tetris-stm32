@@ -156,6 +156,27 @@
               "Blue": 255
             },
             "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 186,
+            "Y": 25,
+            "Width": 65,
+            "Height": 10,
+            "TextId": "__SingleUse_5NRL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_YTB1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": []

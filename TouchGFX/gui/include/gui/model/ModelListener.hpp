@@ -21,6 +21,8 @@ public:
 
     virtual void notifyNextChanged() {}
 
+    virtual void notifyTimerChanged(int) {}
+
 protected:
     Model* model;
 };

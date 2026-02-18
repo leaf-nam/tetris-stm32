@@ -31,3 +31,8 @@ void GamePresenter::notifyNextChanged()
 {
 	view.updateNext();
 }
+
+void GamePresenter::notifyTimerChanged(int sec)
+{
+	view.updateTimer(sec);
+}

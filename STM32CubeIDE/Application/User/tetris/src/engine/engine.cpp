@@ -79,6 +79,7 @@ void Engine::update_all() {
 	renderer->render_board(board, board.get_active_mino());
 	renderer->render_hold(board.get_saved_mino());
 	renderer->render_score(score);
+	renderer->render_next_block(tetromino_queue.get_tetrominos());
 	renderer->render_level(rule->get_level());
 	renderer->render_timer(ENGINE_TICK_TO_SEC(tick));
 }

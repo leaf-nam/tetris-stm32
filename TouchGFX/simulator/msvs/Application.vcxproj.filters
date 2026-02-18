@@ -212,28 +212,28 @@
       <UniqueIdentifier>D5641252-3314-361A-22AC-ED79F17BB3DC</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include">
-      <UniqueIdentifier>503DA50C-A3F8-FD9D-3A49-9B479634158C</UniqueIdentifier>
+      <UniqueIdentifier>F4251E78-30BA-2876-AEA9-9D7E1BCE52FB</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\include">
-      <UniqueIdentifier>F38D686B-7DD6-8A42-63AA-FBD811E80EE8</UniqueIdentifier>
+      <UniqueIdentifier>F674B115-B2AD-5EF9-059F-B6BE56BF8716</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\render">
-      <UniqueIdentifier>3018729F-A680-5823-4E33-8A3B62B8CA43</UniqueIdentifier>
+      <UniqueIdentifier>DC437A1B-D5A2-66F5-B18C-D5B13AB281B4</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\game_rule">
-      <UniqueIdentifier>5174D52A-563C-E854-8B4D-26B71414577A</UniqueIdentifier>
+      <UniqueIdentifier>6716161B-7478-4A28-5D48-BDD80E1757BD</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\board">
-      <UniqueIdentifier>F62AE3E1-D8AB-7AF7-A1F0-81474618331C</UniqueIdentifier>
+      <UniqueIdentifier>965031B3-3EA1-9C21-CF2C-69AD7B1D89CD</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\util">
-      <UniqueIdentifier>AF41457C-C5E8-BC70-777F-D62387CEDF0F</UniqueIdentifier>
+      <UniqueIdentifier>0405866C-64A0-059D-78C4-38EC1E3D84C7</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\engine">
-      <UniqueIdentifier>69C7FBF3-D1D6-2DBA-81FB-45099C19F406</UniqueIdentifier>
+      <UniqueIdentifier>06ED2E1C-AF7B-2C5F-7767-32B983D8F462</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\tetromino">
-      <UniqueIdentifier>17CB4DEA-1C81-1657-6C3F-D8D0B5DFF855</UniqueIdentifier>
+      <UniqueIdentifier>C7312482-DCDF-87FB-DD2C-5B5958A7DE4E</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -840,6 +840,12 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\timer.h">
       <Filter>Source Files\gui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\util\HoldWidget.hpp">
+      <Filter>Header Files\gui\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\util\NextWidget.hpp">
+      <Filter>Header Files\gui\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

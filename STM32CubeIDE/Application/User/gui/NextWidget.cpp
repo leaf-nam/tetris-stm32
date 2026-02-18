@@ -22,7 +22,7 @@ void NextWidget::draw(const touchgfx::Rect& invalidatedArea) const {
 			for (int x = 0; x < RENDER_TASK_MINO_SIZE; x++) {
 				int drawX = absolute.x + x * BOARD_BLOCK_SIZE;
 				int drawY = absolute.y + y * BOARD_BLOCK_SIZE
-						+ (BOARD_BLOCK_SIZE * RENDER_TASK_MINO_SIZE) * i;
+						+ ((BOARD_BLOCK_SIZE - 3) * RENDER_TASK_MINO_SIZE) * i;
 
 				RGB rgb = (minoShape[y][x] == 0)?
 					Colors::getColor(8) :

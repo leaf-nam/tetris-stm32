@@ -15,7 +15,7 @@ void HoldWidget::draw(const touchgfx::Rect& invalidatedArea) const {
     touchgfx::LCD& lcd = touchgfx::HAL::lcd();
     touchgfx::Rect absolute = getAbsoluteRect();
 
-    for (int y = 0; y < RENDER_TASK_MINO_SIZE; y++) {
+    for (int y = 0; y < RENDER_TASK_MINO_SIZE - 1; y++) {
         for (int x = 0; x < RENDER_TASK_MINO_SIZE; x++) {
         	int drawX = absolute.x + x * BOARD_BLOCK_SIZE;
 			int drawY = absolute.y + y * BOARD_BLOCK_SIZE;

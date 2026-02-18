@@ -43,6 +43,13 @@ void LcdRenderer::render_board(const Board& board, const Tetromino& tetromino)
 void LcdRenderer::render_timer(int sec)
 {
 	printf("render timer called : %d\n", sec);
+
+	RenderTaskMessage msg;
+
+	msg.messageID = RENDER_TASK_TIMER;
+	msg.sec = sec;
+
+	xQueueSendToFront(render_task_queue, &msg, pdMS_TO_TICKS(20));
 }
 
 void LcdRenderer::render_next_block(const int* tetrominoArray)

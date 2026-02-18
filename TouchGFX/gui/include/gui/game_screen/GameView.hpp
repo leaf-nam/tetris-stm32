@@ -20,6 +20,7 @@ public:
     virtual void updateBoard();
     virtual void updateHold();
     virtual void updateNext();
+    virtual void updateTimer(int);
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:

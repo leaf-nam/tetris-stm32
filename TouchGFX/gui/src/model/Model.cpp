@@ -16,6 +16,7 @@ void Model::tick()
         case RENDER_TASK_BOARD: updateBoard(msg); break;
         case RENDER_TASK_HOLD: updateHold(msg); break;
         case RENDER_TASK_NEXT_BLOCK: updateNext(msg); break;
+        case RENDER_TASK_TIMER: updateTimer(msg); break;
         default: break;
         }
     }
@@ -58,5 +59,11 @@ void Model::updateNext(RenderTaskMessage& msg) {
 
 	if (modelListener != nullptr) {
 		modelListener->notifyNextChanged();
+	}
+}
+
+void Model::updateTimer(RenderTaskMessage& msg) {
+	if (modelListener != nullptr) {
+		modelListener->notifyTimerChanged(msg.sec);
 	}
 }
