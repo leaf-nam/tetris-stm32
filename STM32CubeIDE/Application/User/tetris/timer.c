@@ -10,7 +10,7 @@ TimerHandle_t xInputTimer;
 
 TickType_t x500msWait = pdMS_TO_TICKS(500);
 TickType_t xInputWait = pdMS_TO_TICKS(30);
-TickType_t xInputHold = pdMS_TO_TICKS(250);
+TickType_t xInputHold = pdMS_TO_TICKS(300);
 
 void Timer_500ms_callback( TimerHandle_t xTimer ) {
 
@@ -84,9 +84,9 @@ int Timer_get_input(int x, int y) {
 	int dx = x > 3000? 1 : x < 1000? -1 : 0;
 	int dy = y > 3000? 1 : y < 1000? -1 : 0;
 
-	if (dx == 1 && dy == 0) return ARROW_LEFT;
-	if (dx == -1 && dy == 0) return ARROW_RIGHT;
-	if (dx == 0 && dy == 1) return ARROW_UP;
-	if (dx == 0 && dy == -1) return ARROW_DOWN;
+	if (dx == 1 && dy == 0) return ARROW_DOWN;
+	if (dx == -1 && dy == 0) return ARROW_UP;
+	if (dx == 0 && dy == 1) return ARROW_LEFT;
+	if (dx == 0 && dy == -1) return ARROW_RIGHT;
 	return -1;
 }
