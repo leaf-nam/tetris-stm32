@@ -4,6 +4,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <images/BitmapDatabase.hpp>
 #include <engine_task.h>
+#include <sound_task.h>
 #include <timer.h>
 
 GameView::GameView()
@@ -58,9 +59,13 @@ void GameView::tearDownScreen()
     remove(nextWidget);
     remove(boardWidget);
 
-	EngineTaskMessage message;
-	message.messageID = ENGINE_TASK_FINISH;
-    xQueueSendToFront( engine_task_queue, &message, xInputWait );
+	EngineTaskMessage engineMessage;
+	engineMessage.messageID = ENGINE_TASK_FINISH;
+    xQueueSendToFront( engine_task_queue, &engineMessage, xInputWait );
+
+    SoundTaskMessage soundMessage;
+    soundMessage.messageID = SOUND_TASK_BGM_1_START;
+	xQueueSendToFront( sound_task_queue, &soundMessage, pdMS_TO_TICKS(20) );
 }
 
 void GameView::updateBoard()

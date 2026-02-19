@@ -6,6 +6,7 @@ extern "C" {
 #include "task.h"
 #include "queue.h"
 #include "engine_task.h"
+#include "sound_task.h"
 }
 
 #include "render/lcd_renderer.hpp"
@@ -30,7 +31,12 @@ void engine_wrapper_init(void)
 		if (xQueueReceive(engine_task_queue, &message, pdMS_TO_TICKS(20)) == pdPASS) {
 
 			switch(message.messageID) {
-			case ENGINE_TASK_INIT: engine_loop = true; break;
+			case ENGINE_TASK_INIT:
+				engine_loop = true;
+				SoundTaskMessage msg;
+				msg.messageID = SOUND_TASK_BGM_2_START;
+				xQueueSendToFront(sound_task_queue, &msg, pdMS_TO_TICKS(20));
+				break;
 			case ENGINE_TASK_FINISH: engine_loop = false; break;
 			case ENGINE_TASK_TICK: if (engine_loop) engine.handle_tick(); break;
 			case ENGINE_TASK_INPUT: if (engine_loop) engine.handle_input(message.input); break;
@@ -43,6 +49,11 @@ void engine_wrapper_init(void)
 
 		if (engine.is_game_over()) {
 			engine_loop = false;
+
+			SoundTaskMessage msg;
+			msg.messageID = SOUND_TASK_BGM_STOP;
+			xQueueSendToFront(sound_task_queue, &msg, pdMS_TO_TICKS(20));
+
 			engine.finish();
 		}
 	}

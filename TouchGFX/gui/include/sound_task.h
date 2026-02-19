@@ -14,10 +14,9 @@ typedef struct SoundTaskMessage_ {
 #define SOUND_TASK_QUEUE_LENGTH 3
 #define SOUND_TASK_QUEUE_SIZE sizeof(SoundTaskMessage)
 
-#define SOUND_TASK_BGM_INIT 1
-#define SOUND_TASK_BGM_STOP 2
-#define SOUND_TASK_BREAK_LINE 3
-#define SOUND_TASK_GAME_OVER 4
+#define SOUND_TASK_BGM_1_START 1
+#define SOUND_TASK_BGM_2_START 2
+#define SOUND_TASK_BGM_STOP 3
 
 
 void Sound_Task(void *argument);
