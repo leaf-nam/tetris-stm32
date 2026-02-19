@@ -6,9 +6,9 @@
 #include "tetromino/tetromino_queue.hpp"
 #include "util/action.hpp"
 
-extern "C" {
+#include "sound_effect_task.h"
 #include "cmsis_os2.h"
-}
+
 
 #define ENGINE_TICK_TO_SEC(t) ((t)/2)
 
@@ -47,6 +47,8 @@ void Engine::handle_input(int key){
 		renderer->render_next_block(tetromino_queue.get_tetrominos());
 		renderer->render_hold(board.get_saved_mino());
 	}
+
+	if (action == Action::HARD_DROP) down_sound();
 }
 
 void Engine::handle_loop()
@@ -74,6 +76,7 @@ void Engine::handle_loop()
 
 	// 한줄 삭제(=점수 추가)
 	if (new_score != 0 || is_level_up) {
+		break_sound();
 		score += new_score;
 		update_all();
 		is_level_up = false;
@@ -102,6 +105,18 @@ void Engine::update_all() {
 	renderer->render_next_block(tetromino_queue.get_tetrominos());
 	renderer->render_level(rule->get_level());
 	renderer->render_timer(ENGINE_TICK_TO_SEC(tick));
+}
+
+void Engine::break_sound() {
+	SoundEffectTaskMessage effect_msg;
+	effect_msg.messageID = SOUND_EFFECT_TASK_BREAK;
+	xQueueSendToFront(sound_effect_task_queue, &effect_msg, pdMS_TO_TICKS(20));
+}
+
+void Engine::down_sound() {
+	SoundEffectTaskMessage effect_msg;
+	effect_msg.messageID = SOUND_EFFECT_TASK_DOWN;
+	xQueueSendToFront(sound_effect_task_queue, &effect_msg, pdMS_TO_TICKS(20));
 }
 
 Engine::~Engine() {}

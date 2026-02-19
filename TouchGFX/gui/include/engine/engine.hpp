@@ -23,6 +23,8 @@ private:
 	int tick = 0;
 
 	void update_all();
+	void break_sound();
+	void down_sound();
 
 public:
     /**

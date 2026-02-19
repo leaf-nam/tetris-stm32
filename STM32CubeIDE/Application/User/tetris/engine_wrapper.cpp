@@ -7,6 +7,7 @@ extern "C" {
 #include "queue.h"
 #include "engine_task.h"
 #include "sound_task.h"
+#include "sound_effect_task.h"
 }
 
 #include "render/lcd_renderer.hpp"
@@ -50,9 +51,13 @@ void engine_wrapper_init(void)
 		if (engine.is_game_over()) {
 			engine_loop = false;
 
-			SoundTaskMessage msg;
-			msg.messageID = SOUND_TASK_BGM_STOP;
-			xQueueSendToFront(sound_task_queue, &msg, pdMS_TO_TICKS(20));
+			SoundTaskMessage sound_msg;
+			sound_msg.messageID = SOUND_TASK_BGM_STOP;
+			xQueueSendToFront(sound_task_queue, &sound_msg, pdMS_TO_TICKS(20));
+
+			SoundEffectTaskMessage effect_msg;
+			effect_msg.messageID = SOUND_EFFECT_TASK_GAME_OVER;
+			xQueueSendToFront(sound_effect_task_queue, &effect_msg, pdMS_TO_TICKS(20));
 
 			engine.finish();
 		}
