@@ -36,3 +36,8 @@ void GamePresenter::notifyTimerChanged(int sec)
 {
 	view.updateTimer(sec);
 }
+
+void GamePresenter::notifyGameOverChanged()
+{
+	view.updateGameOver();
+}

@@ -23,7 +23,7 @@ class GameRule
     virtual int get_level() = 0;
     virtual int update_score() = 0;
     virtual bool time_and_level_update() = 0;
-    virtual ~GameRule() = default;
+    virtual ~GameRule();
 };
 
 #endif

@@ -56,6 +56,7 @@ class Board
     const bool is_filled(int r, int c) const;
     const int at(int r, int c) const;
     bool fill(int r, int c, int type);
+    void reset();
 
     void delete_line(int del_row);
     bool insert_line(int ins_row);

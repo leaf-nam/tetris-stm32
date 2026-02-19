@@ -40,6 +40,6 @@ void NextWidget::draw(const touchgfx::Rect& invalidatedArea) const {
 
 touchgfx::Rect NextWidget::getSolidRect() const
 {
-    return touchgfx::Rect(0, 0, getWidth(), getHeight());
+    return touchgfx::Rect(0, 0, 0, 0);
 }
 

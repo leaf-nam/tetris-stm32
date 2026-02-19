@@ -4,8 +4,10 @@
 #include <gui_generated/game_screen/GameViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 
-GameViewBase::GameViewBase()
+GameViewBase::GameViewBase() :
+    buttonCallback(this, &GameViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -53,6 +55,26 @@ GameViewBase::GameViewBase()
     textArea2.resizeToCurrentText();
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5NRL));
     add(textArea2);
+
+    container1.setPosition(16, 65, 127, 130);
+    main_btn.setXY(8, 45);
+    main_btn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_NORMAL_ID));
+    main_btn.setAction(buttonCallback);
+    container1.add(main_btn);
+
+    textArea2_1_1.setXY(28, 61);
+    textArea2_1_1.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    textArea2_1_1.setLinespacing(0);
+    textArea2_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QLWO));
+    container1.add(textArea2_1_1);
+
+    textArea2_1.setXY(0, 0);
+    textArea2_1.setColor(touchgfx::Color::getColorFromRGB(255, 90, 90));
+    textArea2_1.setLinespacing(0);
+    textArea2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N2QL));
+    container1.add(textArea2_1);
+
+    add(container1);
 }
 
 GameViewBase::~GameViewBase()
@@ -63,4 +85,15 @@ GameViewBase::~GameViewBase()
 void GameViewBase::setupScreen()
 {
 
+}
+
+void GameViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &main_btn)
+    {
+        //back_to_main
+        //When main_btn clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
+    }
 }

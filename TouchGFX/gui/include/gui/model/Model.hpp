@@ -11,6 +11,7 @@ public:
 	Render_Board board;
 	int hold;
 	int next[RENDER_TASK_NEXT_BLOCK_SIZE];
+	bool gameOver = false;
 
     Model();
 
@@ -29,6 +30,7 @@ private:
     void updateHold(RenderTaskMessage& msg);
     void updateNext(RenderTaskMessage& msg);
     void updateTimer(RenderTaskMessage& msg);
+    void updateGameOver();
 };
 
 #endif // MODEL_HPP

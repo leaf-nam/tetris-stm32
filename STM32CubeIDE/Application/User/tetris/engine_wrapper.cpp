@@ -41,7 +41,9 @@ void engine_wrapper_init(void)
 
 		if (engine_loop) engine.handle_loop();
 
-		if (engine.is_game_over()) break;
+		if (engine.is_game_over()) {
+			engine_loop = false;
+			engine.finish();
+		}
 	}
-
 }

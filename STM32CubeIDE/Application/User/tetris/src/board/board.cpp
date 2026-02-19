@@ -266,3 +266,11 @@ void Board::swap_mino()
             is_mino_swaped = true;
     }
 }
+
+void Board::reset() {
+    for (int r = 0; r < BOARD_ROW; ++r) {
+        for (int c = 0; c < BOARD_COL; ++c) {
+            fill(r, c, 8);
+        }
+    }
+}

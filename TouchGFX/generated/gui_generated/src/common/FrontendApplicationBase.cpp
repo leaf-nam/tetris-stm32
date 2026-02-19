@@ -13,8 +13,6 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/game_screen/GameView.hpp>
 #include <gui/game_screen/GamePresenter.hpp>
-#include <gui/setting_screen/SettingView.hpp>
-#include <gui/setting_screen/SettingPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -59,17 +57,4 @@ void FrontendApplicationBase::gotoGameScreenNoTransition()
 void FrontendApplicationBase::gotoGameScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<GameView, GamePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Setting
-
-void FrontendApplicationBase::gotoSettingScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSettingScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoSettingScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<SettingView, SettingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

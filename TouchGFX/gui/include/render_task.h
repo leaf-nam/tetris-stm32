@@ -32,7 +32,7 @@ typedef struct RenderTaskMessage_ {
 
 } RenderTaskMessage;
 
-#define RENDER_TASK_QUEUE_LENGTH 5
+#define RENDER_TASK_QUEUE_LENGTH 10
 #define RENDER_TASK_QUEUE_SIZE sizeof(RenderTaskMessage)
 
 #define RENDER_TASK_BACKGROUND 1

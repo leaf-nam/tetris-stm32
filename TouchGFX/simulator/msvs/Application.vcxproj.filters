@@ -190,18 +190,6 @@
     <Filter Include="Source Files\gui\game_screen">
       <UniqueIdentifier>1047983B-9A34-D2D7-F388-E18CC9C32143</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\setting_screen">
-      <UniqueIdentifier>4EA65A43-18CD-B8FF-01E2-00936D033FE2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\setting_screen">
-      <UniqueIdentifier>0087C348-CB13-1B67-E17F-19054CAC9C58</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\setting_screen">
-      <UniqueIdentifier>3EC3AF11-E855-E1C4-3726-3E4F966C42EB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\setting_screen">
-      <UniqueIdentifier>55E5CA4F-5327-EEE0-A9FB-C6072440B7EF</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\game_screen">
       <UniqueIdentifier>C5DCC1D6-ED1F-9B41-574F-74C4CFA3723A</UniqueIdentifier>
     </Filter>
@@ -211,29 +199,29 @@
     <Filter Include="Header Files\gui\util">
       <UniqueIdentifier>D5641252-3314-361A-22AC-ED79F17BB3DC</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\include">
-      <UniqueIdentifier>F4251E78-30BA-2876-AEA9-9D7E1BCE52FB</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\include">
-      <UniqueIdentifier>F674B115-B2AD-5EF9-059F-B6BE56BF8716</UniqueIdentifier>
+      <UniqueIdentifier>8AD7F186-4FD5-6368-58DC-14749BC10767</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\include\render">
-      <UniqueIdentifier>DC437A1B-D5A2-66F5-B18C-D5B13AB281B4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\game_rule">
-      <UniqueIdentifier>6716161B-7478-4A28-5D48-BDD80E1757BD</UniqueIdentifier>
+    <Filter Include="Header Files\gui\include">
+      <UniqueIdentifier>ABEC80AA-F704-C0ED-8EED-FB499270B623</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\board">
-      <UniqueIdentifier>965031B3-3EA1-9C21-CF2C-69AD7B1D89CD</UniqueIdentifier>
+      <UniqueIdentifier>B76AFEFA-61CE-4179-28F4-163001CBA433</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\game_rule">
+      <UniqueIdentifier>81ECE5D5-6C0D-1B79-852A-6EC072FAB18A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\render">
+      <UniqueIdentifier>3BCB7B78-67EB-A532-1726-EE15C8F7A61E</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\util">
-      <UniqueIdentifier>0405866C-64A0-059D-78C4-38EC1E3D84C7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\include\engine">
-      <UniqueIdentifier>06ED2E1C-AF7B-2C5F-7767-32B983D8F462</UniqueIdentifier>
+      <UniqueIdentifier>9AF10DD7-24E7-D489-CE9B-9B56F107F5DA</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\include\tetromino">
-      <UniqueIdentifier>C7312482-DCDF-87FB-DD2C-5B5958A7DE4E</UniqueIdentifier>
+      <UniqueIdentifier>86B5369C-B859-BF6A-3CC7-F7DE64F07BBD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\include\engine">
+      <UniqueIdentifier>B7C9BB17-62C5-4CDA-DF2F-3773A2BAF3DD</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -284,15 +272,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\main_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\setting_screen\SettingPresenter.cpp">
-      <Filter>Source Files\gui\setting_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\setting_screen\SettingView.cpp">
-      <Filter>Source Files\gui\setting_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\setting_screen\SettingViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\setting_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -810,15 +789,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\main_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\setting_screen\SettingPresenter.hpp">
-      <Filter>Header Files\gui\setting_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\setting_screen\SettingView.hpp">
-      <Filter>Header Files\gui\setting_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\setting_screen\SettingViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\setting_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\render\mock_renderer.hpp">
       <Filter>Header Files\gui\include\render</Filter>

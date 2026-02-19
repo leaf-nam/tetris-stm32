@@ -21,6 +21,7 @@ public:
     virtual void updateHold();
     virtual void updateNext();
     virtual void updateTimer(int);
+    virtual void updateGameOver();
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:

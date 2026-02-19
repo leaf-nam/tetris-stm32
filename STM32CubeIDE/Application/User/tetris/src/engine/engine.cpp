@@ -24,6 +24,8 @@ Engine::Engine(IRenderer* renderer, Board& board, GameRule* rule, TetrominoQueue
  * @brief 타이머 틱 실행
  */
 void Engine::handle_tick(){
+	if (game_over) return;
+
 	tick++;
 	rule->process(Action::DROP);
 	renderer->render_board(board, board.get_active_mino());
@@ -36,6 +38,8 @@ void Engine::handle_tick(){
  * @brief 입력 인터럽트 실행
  */
 void Engine::handle_input(int key){
+	if (game_over) return;
+
 	Action action = key_mapper.map_key(key);
 	if (action != Action::INVALID) {
 		rule->process(action);
@@ -47,24 +51,23 @@ void Engine::handle_input(int key){
 
 void Engine::handle_loop()
 {
-	// 블록 생성
+	if (game_over) return;
+
+	// 블록 생성 + 게임종료 검사
 	if (!board.has_active_mino()) {
 		if (!board.spawn_mino(tetromino_queue.get_new_tetromino())) {
 			game_over = true;
-			renderer->render_board(board, board.get_active_mino());
 			renderer->render_game_over();
 			return;
 		}
-		renderer->render_next_block(tetromino_queue.get_tetrominos());
 	}
 
 	// 게임 이벤트 처리
 	new_score = rule->update_score();
 
-	// 레벨업 이벤트(3줄 증가) 처리
+	// 레벨업 이벤트(3줄 증가) 처리 + 게임종료 검사
 	if (is_level_up && !board.insert_line(3)) {
 		game_over = true;
-		renderer->render_board(board, board.get_active_mino());
 		renderer->render_game_over();
 		return;
 	}
@@ -80,7 +83,17 @@ void Engine::handle_loop()
 
 void Engine::stop() {}
 
-int Engine::finish() { return 0; }
+int Engine::finish() {
+	board.reset();
+
+	game_over = false;
+	is_level_up = false;
+	game_over = false;
+	score = 0;
+	tick = 0;
+
+	return 0;
+}
 
 void Engine::update_all() {
 	renderer->render_board(board, board.get_active_mino());

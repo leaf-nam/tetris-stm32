@@ -18,6 +18,8 @@ RGB Colors::getColor(int type) {
         return {200, 160, 255};
     case 7: // 방해 블록 (Gray)
         return {140, 150, 200};
+    case 8: // 백그라운드
+		return {30, 32, 45};
     default: // 예외 (Reset)
         return {30, 32, 45};
     }

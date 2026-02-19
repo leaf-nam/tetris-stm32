@@ -54,3 +54,7 @@ void GameRule::process(int user_input)
     }
     }
 }
+
+GameRule::~GameRule() {
+
+}

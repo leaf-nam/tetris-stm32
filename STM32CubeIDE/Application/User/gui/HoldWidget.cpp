@@ -41,6 +41,6 @@ void HoldWidget::draw(const touchgfx::Rect& invalidatedArea) const {
 
 touchgfx::Rect HoldWidget::getSolidRect() const
 {
-    return touchgfx::Rect(0, 0, getWidth(), getHeight());
+	return touchgfx::Rect(0, 0, 0, 0);
 }
 

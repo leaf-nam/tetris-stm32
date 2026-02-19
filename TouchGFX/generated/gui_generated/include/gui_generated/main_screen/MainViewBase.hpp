@@ -8,8 +8,10 @@
 #include <mvp/View.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
 {
@@ -27,8 +29,11 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Box box1;
+    touchgfx::Image image2;
     touchgfx::ClickListener< touchgfx::Button > StartBtn;
-    touchgfx::ClickListener< touchgfx::Button > SettingBtn;
+    touchgfx::TextArea textArea1;
+    touchgfx::Image image1;
 
 private:
 

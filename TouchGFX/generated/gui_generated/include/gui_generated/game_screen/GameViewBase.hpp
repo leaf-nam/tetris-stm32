@@ -10,6 +10,9 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class GameViewBase : public touchgfx::View<GamePresenter>
 {
@@ -35,6 +38,10 @@ protected:
     touchgfx::TextArea textArea1_1;
     touchgfx::TextArea textArea1_1_1;
     touchgfx::TextAreaWithOneWildcard textArea2;
+    touchgfx::Container container1;
+    touchgfx::ClickListener< touchgfx::Button > main_btn;
+    touchgfx::TextArea textArea2_1_1;
+    touchgfx::TextArea textArea2_1;
 
     /*
      * Wildcard Buffers
@@ -43,6 +50,16 @@ protected:
     touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<GameViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

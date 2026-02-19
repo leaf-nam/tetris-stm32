@@ -4,6 +4,7 @@
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 MainViewBase::MainViewBase() :
     buttonCallback(this, &MainViewBase::buttonCallbackHandler)
@@ -12,15 +13,28 @@ MainViewBase::MainViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    StartBtn.setXY(33, 135);
-    StartBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
+    box1.setPosition(0, 0, 240, 320);
+    box1.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    add(box1);
+
+    image2.setXY(6, 70);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_TETRISSEN2_ID));
+    add(image2);
+
+    StartBtn.setXY(65, 135);
+    StartBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_INACTIVE_ID));
     StartBtn.setAction(buttonCallback);
     add(StartBtn);
 
-    SettingBtn.setXY(33, 220);
-    SettingBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_DISABLED_ID));
-    SettingBtn.setAction(buttonCallback);
-    add(SettingBtn);
+    textArea1.setXY(74, 150);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(30, 32, 45));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DS4F));
+    add(textArea1);
+
+    image1.setXY(15, 15);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_TETRISSEN_ID));
+    add(image1);
 }
 
 MainViewBase::~MainViewBase()
@@ -41,12 +55,5 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When StartBtn clicked change screen to Game
         //Go to Game with no screen transition
         application().gotoGameScreenNoTransition();
-    }
-    if (&src == &SettingBtn)
-    {
-        //GoToSetting
-        //When SettingBtn clicked change screen to Setting
-        //Go to Setting with no screen transition
-        application().gotoSettingScreenNoTransition();
     }
 }

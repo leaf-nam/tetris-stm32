@@ -16,8 +16,6 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/game_screen/GameView.hpp>
 #include <gui/game_screen/GamePresenter.hpp>
-#include <gui/setting_screen/SettingView.hpp>
-#include <gui/setting_screen/SettingPresenter.hpp>
 
 
 /**
@@ -42,8 +40,7 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainView,
             touchgfx::meta::TypeList< GameView,
-            touchgfx::meta::TypeList< SettingView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedViewTypes;
 
     /**
@@ -57,8 +54,7 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainPresenter,
             touchgfx::meta::TypeList< GamePresenter,
-            touchgfx::meta::TypeList< SettingPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedPresenterTypes;
 
     /**

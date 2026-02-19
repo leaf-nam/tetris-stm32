@@ -23,6 +23,8 @@ public:
 
     virtual void notifyTimerChanged(int) {}
 
+    virtual void notifyGameOverChanged() {}
+
 protected:
     Model* model;
 };

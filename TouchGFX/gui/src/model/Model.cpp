@@ -17,12 +17,18 @@ void Model::tick()
         case RENDER_TASK_HOLD: updateHold(msg); break;
         case RENDER_TASK_NEXT_BLOCK: updateNext(msg); break;
         case RENDER_TASK_TIMER: updateTimer(msg); break;
+        case RENDER_TASK_GAME_OVER: updateGameOver(); break;
         default: break;
         }
     }
 }
 
 void Model::updateBoard(RenderTaskMessage& msg) {
+	if (gameOver) {
+		gameOver = false;
+		return;
+	}
+
 	auto pos = msg.mino.pos;
 	for (int r = 0; r < RENDER_TASK_BOARD_ROW; ++r) {
 		for (int c = 0; c < RENDER_TASK_BOARD_COL; ++c) {
@@ -45,6 +51,8 @@ void Model::updateBoard(RenderTaskMessage& msg) {
 }
 
 void Model::updateHold(RenderTaskMessage& msg) {
+	if (gameOver) return;
+
 	hold = msg.holdType;
 
 	if (modelListener != nullptr) {
@@ -53,6 +61,8 @@ void Model::updateHold(RenderTaskMessage& msg) {
 }
 
 void Model::updateNext(RenderTaskMessage& msg) {
+	if (gameOver) return;
+
     for (int i = 0; i < RENDER_TASK_NEXT_BLOCK_SIZE; ++i) {
         next[i] = msg.nextType[i];
     }
@@ -63,7 +73,27 @@ void Model::updateNext(RenderTaskMessage& msg) {
 }
 
 void Model::updateTimer(RenderTaskMessage& msg) {
+	if (gameOver) return;
+
 	if (modelListener != nullptr) {
 		modelListener->notifyTimerChanged(msg.sec);
+	}
+}
+
+void Model::updateGameOver() {
+	for (int r = 0; r < RENDER_TASK_BOARD_ROW; ++r) {
+		for (int c = 0; c < RENDER_TASK_BOARD_COL; ++c) {
+			if (board[r][c] < 7 && board[r][c] > -1)
+				board[r][c] = 7;
+
+			else
+				board[r][c] = 8;
+		}
+	}
+
+	gameOver = true;
+
+	if (modelListener != nullptr) {
+		modelListener->notifyGameOverChanged();
 	}
 }

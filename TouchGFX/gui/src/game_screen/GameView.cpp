@@ -1,5 +1,8 @@
 #include <gui/game_screen/GameView.hpp>
 #include <touchgfx/Color.hpp>
+#include <gui_generated/game_screen/GameViewBase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 #include <engine_task.h>
 #include <timer.h>
 
@@ -22,6 +25,7 @@ void GameView::setupScreen()
     boardWidget.setWidth(RENDER_TASK_BOARD_ROW * BOARD_BLOCK_SIZE);
     boardWidget.setHeight(RENDER_TASK_BOARD_COL * BOARD_BLOCK_SIZE);
     boardWidget.setBoard(&model->board);
+    boardWidget.setTouchable(false);
     boardWidget.setVisible(true);
 
     holdWidget.setXY(170, 75);
@@ -38,9 +42,13 @@ void GameView::setupScreen()
 
     Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%02d:%02d", 0, 0);
 
+    remove(container1);
 	add(holdWidget);
 	add(nextWidget);
 	add(boardWidget);
+
+	container1.setVisible(false);
+	add(container1);
 }
 
 void GameView::tearDownScreen()
@@ -75,4 +83,10 @@ void GameView::updateTimer(int sec) {
     Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%02d:%02d", m, s);
     textArea2.resizeToCurrentText();
     textArea2.invalidate();
+}
+
+void GameView::updateGameOver() {
+    container1.setVisible(true);
+    container1.invalidate();
+	boardWidget.invalidate();
 }
