@@ -18,12 +18,12 @@ enum notes {
 #define EFFECT_SPEED 15
 
 enum notes DOWN_note[] = { HARD_DROP };
-int DOWN_beat[] = { 3 };
+int DOWN_beat[] = { 5 };
 int DOWN_count = sizeof(DOWN_note) / sizeof(enum notes);
 
 
 enum notes BREAK_note[] = { A6, E6 };
-int BREAK_beat[] = { 2, 2 };
+int BREAK_beat[] = { 3, 3 };
 int BREAK_count = sizeof(BREAK_note) / sizeof(enum notes);
 
 

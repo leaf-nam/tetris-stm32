@@ -8,10 +8,11 @@ extern "C" {
 #include "board/board.hpp"
 #include "tetromino/tetromino.hpp"
 #include "i_renderer.hpp"
+#include "render/shadow_maker.hpp"
 
 class LcdRenderer : public IRenderer {
 public:
-	LcdRenderer();
+	LcdRenderer(ShadowMaker&);
 
 	void render_background();
 
@@ -35,6 +36,8 @@ public:
 
 	virtual ~LcdRenderer();
 
+private:
+	ShadowMaker& shadow_maker;
 };
 
 #endif /* APPLICATION_USER_TETRIS_SRC_RENDER_LCD_RENDERER_HPP_ */

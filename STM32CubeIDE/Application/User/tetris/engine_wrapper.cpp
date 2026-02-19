@@ -17,7 +17,8 @@ extern "C" void engine_wrapper_init();
 
 void engine_wrapper_init(void)
 {
-	LcdRenderer render;
+	ShadowMaker shadow_maker;
+	LcdRenderer render(shadow_maker);
 	Board board;
 	ZEN rule = ZEN(board);
 	TetrominoQueue& queue = TetrominoQueue::get_instance();

@@ -4,7 +4,7 @@ extern QueueHandle_t render_task_queue;
 
 using namespace std;
 
-LcdRenderer::LcdRenderer() {
+LcdRenderer::LcdRenderer(ShadowMaker& shadow_maker): shadow_maker(shadow_maker) {
 }
 
 LcdRenderer::~LcdRenderer() {
@@ -19,11 +19,14 @@ void LcdRenderer::render_board(const Board& board, const Tetromino& tetromino)
 
 	RenderTaskMessage msg;
 
+	array<Pos, SHADOW_SIZE> shadows = shadow_maker.get_shadow_pos(board, tetromino);
+
 	msg.messageID = RENDER_TASK_BOARD;
 
 	for (int i = BOARD_UPPER; i < BOARD_ROW + BOARD_UPPER; ++i) {
 		for (int j = 0; j < BOARD_COL; ++j) {
-			msg.board[i - BOARD_UPPER][j] = board.at(i, j);
+			msg.board[i - BOARD_UPPER][j] = (shadow_maker.is_shadow(shadows, {j, i}))?
+				7 : board.at(i, j);
 		}
 	}
 
