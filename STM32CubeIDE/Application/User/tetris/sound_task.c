@@ -33,6 +33,8 @@ extern TIM_HandleTypeDef htim2;
 #define BGM_SPEED 35
 
 enum notes BGM1_note[] = {
+		BREAK,
+
 		// 1절
 		E5, B4, C5, D5, C5, B4, A4, A4, C5, E5, D5, C5, B4, B4, C5, D5, E5, C5, A4, A4,
 		D5, F5, A5, G5, F5, E5, C5, E5, D5, C5, B4, B4, C5, D5, E5, C5, A4, A4,
@@ -42,6 +44,8 @@ enum notes BGM1_note[] = {
 };
 
 int BGM1_beat[] = {
+		20,
+
 		10, 5, 5, 10, 5, 5, 10, 5, 5, 10, 5, 5, 10, 5, 5, 10, 10, 10, 10, 20,
 		10, 5, 10, 5, 5, 15, 5, 10, 5, 5, 10, 5, 5, 10, 10, 10, 10, 20,
 
@@ -51,6 +55,8 @@ int BGM1_beat[] = {
 int BGM1_count = sizeof(BGM1_note) / sizeof(enum notes);
 
 enum notes BGM2_note[] = {
+		BREAK,
+
 		// 1절
 		B4, B4, C5, B4, A4, C5, B4, A4, G4, A4, G4, G4, A4, G4, FS4, G4, E4, BREAK,
 		B4, B4, C5, B4, A4, C5, B4, A4, G4, A4, G4, G4, A4, G4, FS4, G4, E4, BREAK,
@@ -65,6 +71,8 @@ enum notes BGM2_note[] = {
 };
 
 int BGM2_beat[] = {
+		20,
+
 		5, 5, 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 2, 2, 2, 2, 5, 10,
 		5, 5, 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 2, 2, 2, 2, 5, 10,
 		5, 5, 2, 2, 2, 2, 5, 5, 2, 2, 2, 2, 5, 5, 2, 2, 2, 2, 5, 5, 5, 5,
