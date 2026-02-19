@@ -1,5 +1,7 @@
 #include <gui/game_screen/GameView.hpp>
 #include <touchgfx/Color.hpp>
+#include <engine_task.h>
+#include <timer.h>
 
 GameView::GameView()
 {
@@ -9,6 +11,10 @@ GameView::GameView()
 void GameView::setupScreen()
 {
     GameViewBase::setupScreen();
+
+	EngineTaskMessage message;
+	message.messageID = ENGINE_TASK_INIT;
+    xQueueSendToFront( engine_task_queue, &message, xInputWait );
 
     Model* model = presenter->getModel();
 
@@ -43,6 +49,10 @@ void GameView::tearDownScreen()
     remove(holdWidget);
     remove(nextWidget);
     remove(boardWidget);
+
+	EngineTaskMessage message;
+	message.messageID = ENGINE_TASK_FINISH;
+    xQueueSendToFront( engine_task_queue, &message, xInputWait );
 }
 
 void GameView::updateBoard()

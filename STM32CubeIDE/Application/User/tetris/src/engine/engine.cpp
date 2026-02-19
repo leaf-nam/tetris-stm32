@@ -49,7 +49,12 @@ void Engine::handle_loop()
 {
 	// 블록 생성
 	if (!board.has_active_mino()) {
-		if (!board.spawn_mino(tetromino_queue.get_new_tetromino())) return;
+		if (!board.spawn_mino(tetromino_queue.get_new_tetromino())) {
+			game_over = true;
+			renderer->render_board(board, board.get_active_mino());
+			renderer->render_game_over();
+			return;
+		}
 		renderer->render_next_block(tetromino_queue.get_tetrominos());
 	}
 
@@ -58,8 +63,9 @@ void Engine::handle_loop()
 
 	// 레벨업 이벤트(3줄 증가) 처리
 	if (is_level_up && !board.insert_line(3)) {
+		game_over = true;
 		renderer->render_board(board, board.get_active_mino());
-		renderer->render_hold(board.get_saved_mino());
+		renderer->render_game_over();
 		return;
 	}
 

@@ -79,7 +79,15 @@ void LcdRenderer::render_hold(const Tetromino& tetromino){
 
 void LcdRenderer::render_score(int score){}
 
-void LcdRenderer::render_game_over(){}
+void LcdRenderer::render_game_over(){
+	printf("render game over called\n");
+
+	RenderTaskMessage msg;
+
+	msg.messageID = RENDER_TASK_GAME_OVER;
+
+	xQueueSendToFront(render_task_queue, &msg, pdMS_TO_TICKS(20));
+}
 
 void LcdRenderer::render_win(){}
 

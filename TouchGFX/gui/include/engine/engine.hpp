@@ -17,8 +17,9 @@ private:
     Board& board;
     KeyMapper& key_mapper;
 
-	int score = 0, new_score;
 	bool is_level_up = false;
+	bool game_over = false;
+	int score = 0, new_score;
 	int tick = 0;
 
 	void update_all();
@@ -56,6 +57,8 @@ public:
      * @return 게임 비정상 종료 시 에러코드 반환
      */
     int finish();
+
+    bool is_game_over() { return game_over; }
 
     /**
      * @brief 게임 엔진 및 멤버 변수 정리(소멸자)
