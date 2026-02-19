@@ -6,16 +6,16 @@ ZEN::ZEN(Board& board) : GameRule(board), level_game_time(0), current_level(1)
 {
     // 120 == 1 minute, when timer is 500ms
     time_for_level_up[0] = 0;
-    time_for_level_up[1] = 0;
-    time_for_level_up[2] = 120;
-    time_for_level_up[3] = 120;
-    time_for_level_up[4] = 120;
-    time_for_level_up[5] = 120;
-    time_for_level_up[6] = 120;
-    time_for_level_up[7] = 120;
-    time_for_level_up[8] = 120;
-    time_for_level_up[9] = 120;
-    time_for_level_up[10] = 120;
+    time_for_level_up[1] = 20;
+    time_for_level_up[2] = 18;
+    time_for_level_up[3] = 16;
+    time_for_level_up[4] = 14;
+    time_for_level_up[5] = 12;
+    time_for_level_up[6] = 10;
+    time_for_level_up[7] = 8;
+    time_for_level_up[8] = 7;
+    time_for_level_up[9] = 6;
+    time_for_level_up[10] = 5;
 }
 
 int ZEN::update_score()
