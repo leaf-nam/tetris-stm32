@@ -1,5 +1,10 @@
 # 프로젝트 주제
-LCD를 활용한 테트리스 게임 구현
+STM32 LCD를 활용한 테트리스 게임 구현
+
+## 환경
+- pc : window11 + CubeIDE + CubeMX + TouchGFX Designer
+- firmware : STM32 CortexM4 + FreeRTOS
+- hardware : STM32F429Disco
 
 ## 전체 구조
  - 테트리스 게임 모듈(engine_task)
